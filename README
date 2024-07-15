@@ -1,6 +1,6 @@
 Day 1
 #################################
-login to linops as student
+-----------{SSH}----------
 WINDOWS:
 10.50.24.165
 
@@ -8,6 +8,11 @@ LINUX:
 10.50.35.203
 
 `ssh student@10.x.x.x -X`
+
+Command:
+terminator
+
+--------{Python}------------
 for loop
 
 ```
