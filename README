@@ -24,7 +24,7 @@ https://vta.cybbh.space
 https://git.cybbh.space/programming/python/public/-/blob/master/activities/Python_Student_Handbook/PyStuHBK.adoc?ref_type=heads
 
 --------{Python}------------
-for loop
+For loop
 
 ```
 thing = ["thing1", "thing2"]
