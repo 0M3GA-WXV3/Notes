@@ -1,8 +1,12 @@
-For loop
-===========
+Day 1
+#################################
+login to linops as student
+`ssh student@10.x.x.x -X`
+for loop
+```
 shmeppy = ["thing1", "thing2"]
 for x in shmeppy:
     print(x)
-
+```
 ###############################
 
