@@ -7,7 +7,7 @@ WINDOWS:
 LINUX:
 10.50.35.203
 
-`ssh student@10.x.x.x -X`
+```ssh student@10.x.x.x -X```
 
 Command:
 terminator
