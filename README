@@ -20,8 +20,8 @@ https://cctc.cybbh.io/students/students/latest/Day_0_Setup.html
 for loop
 
 ```
-shmeppy = ["thing1", "thing2"]
-for x in shmeppy:
+thing = ["thing1", "thing2"]
+for x in thing:
     print(x)
 ```
 
