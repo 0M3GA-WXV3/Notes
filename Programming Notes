@@ -1,0 +1,8 @@
+For loop
+===========
+shmeppy = ["thing1", "thing2"]
+for x in shmeppy:
+    print(x)
+
+###############################
+
