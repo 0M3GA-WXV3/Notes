@@ -12,10 +12,13 @@ LINUX:
 Command:
 terminator
 
-------------{OpenVPN}---------
+------------{Links}---------
 
+*** OpenVPN
 https://cctc.cybbh.io/students/students/latest/Day_0_Setup.html
 
+*** VMs
+https://vta.cybbh.space
 
 --------{Python}------------
 for loop
