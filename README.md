@@ -1,4 +1,4 @@
-### Day 1
+# Day 1
 
 <hr>
 -----------{SSH}----------
@@ -16,21 +16,21 @@ terminator
 
 ------------{Links}---------
 
-## Setup
+### Setup
 
 https://cctc.cybbh.io/students/students/latest/Day_0_Setup.html
 
-## VMs
+### VMs
 
 https://vta.cybbh.space
 
-## Python Handbook
+### Python Handbook
 
 https://git.cybbh.space/programming/python/public/-/blob/master/activities/Python_Student_Handbook/PyStuHBK.adoc?ref_type=heads
 
 ## Python
 
-## For loop
+### For loop
 
 ```
 thing = ["thing1", "thing2"]
@@ -39,25 +39,26 @@ for x in thing:
 ```
 
 
-### Day 2
+# Day 2
 
 <hr>
-## Types
+
+### Types
 
 str() float() int() bool() tuple() list()
 
-## Basic Functions
+### Basic Functions
 
 print() type() split() len()
 
-## Basic Methods
+### Basic Methods
 
 ''.join()
 variable.split('')
 variable.append('')
 variable.format('')
 
-## Email Splitters
+### Email Splitters
 ```
 email = 'rahkill@marines.mil'
 email2 = email.split('@')
@@ -74,12 +75,12 @@ blank.append(email2[1].split('.')[0])
 blank.append(email2[1].split('.')[1])
 print(blank)
 ```
-## Type Casting
+### Type Casting
 
 ```
 int(input("Give a number:\n"))
 ```
-## If Else
+### If Else
 
 ```
 a = int(input('Give me a number:\n'))
@@ -91,7 +92,7 @@ elif a == b:
 elif a > b:
     print('Dang dude, that is more than 35')
 ```
-## Fizz/Buzz activity
+### Fizz/Buzz activity
 ```
 #!/usr/bin/env python3
 a = int(input('Give me something: '))
