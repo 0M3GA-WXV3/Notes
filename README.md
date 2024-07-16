@@ -36,9 +36,11 @@ for x in thing:
 ### Day 2
 
 ------------{Type Casting}-------------
+
 str() float() int() bool() tuple() list()
 
 -----------{Basic Functions}-----------
+
 print() type() split() 
 
 --- Method Function
