@@ -47,7 +47,8 @@ str() float() int() bool() tuple() list()
 
 print() type() split() 
 
---- Method Function
+---{ Method Function }---
+
 ''.join()
 variable.split('')   -  Splits by default on spaces
 variable.append('')
