@@ -45,7 +45,7 @@ str() float() int() bool() tuple() list()
 
 *** Basic Functions
 
-print() type() split() 
+print() type() split() len()
 
 *** Basic Functions
 
