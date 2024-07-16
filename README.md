@@ -14,17 +14,21 @@ terminator
 
 ------------{Links}---------
 
-*** Setup
+***Setup
+
 https://cctc.cybbh.io/students/students/latest/Day_0_Setup.html
 
-*** VMs
+***VMs
+
 https://vta.cybbh.space
 
-*** Python Handbook
+***Python Handbook
+
 https://git.cybbh.space/programming/python/public/-/blob/master/activities/Python_Student_Handbook/PyStuHBK.adoc?ref_type=heads
 
 --------{Python}------------
-For loop
+
+*For loop
 
 ```
 thing = ["thing1", "thing2"]
