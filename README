@@ -33,3 +33,22 @@ for x in thing:
 ```
 -+=+-======================-+=+-
 
+### Day 2
+
+------------{Type Casting}-------------
+str() float() int() bool() tuple() list()
+
+-----------{Basic Functions}-----------
+print() type() split() 
+
+--- Method Function
+''.join()
+variable.split('')   -  Splits by default on spaces
+variable.append('')
+
+-----------{My Email Splitter}------------
+  email = 'rahkill@marines.mil'
+  characters = ['@','.']
+  for symbol in characters:
+      email = ' '.join(email.split(symbol))
+  print(email)
