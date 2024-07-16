@@ -74,5 +74,5 @@ print(blank)
 *** Type Casting
 
 ```
-int(input(Give a number:\n))
+int(input("Give a number:\n"))
 ```
