@@ -55,9 +55,9 @@ variable.append('')
 
 -----------{My Email Splitter}------------
 ```
-  email = 'rahkill@marines.mil'
-  characters = ['@','.']
-  for symbol in characters:
-      email = ' '.join(email.split(symbol))
-  print(email)
+email = 'rahkill@marines.mil'
+email2 = email.split('@')
+email3 = '.'.join(email2)
+email4 = email3.split('.')
+print(email4)
 ```
