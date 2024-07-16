@@ -76,3 +76,15 @@ print(blank)
 ```
 int(input("Give a number:\n"))
 ```
+*** If Else
+
+```
+a = int(input('Give me a number:\n'))
+b = 35
+ if b > a:
+     print('It is less than 35')
+elif a == b:
+    print('You gave 35?')
+elif a > b:
+    print('Dang dude, that is more than 35')
+```
