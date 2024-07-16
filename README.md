@@ -1,7 +1,8 @@
 # Day 1
 
 <hr>
------------{SSH}----------
+
+## SSH
 
 WINDOWS:
 10.50.24.165
@@ -14,7 +15,7 @@ LINUX:
 Command:
 terminator
 
-------------{Links}---------
+## Links
 
 ### Setup
 
