@@ -50,8 +50,9 @@ print() type() split() len()
 *** Basic Functions
 
 ''.join()
-variable.split('')   -  Splits by default on spaces
+variable.split('')
 variable.append('')
+variable.format('')
 
 -----------{My Email Splitter}------------
 ```
@@ -61,3 +62,4 @@ email3 = '.'.join(email2)
 email4 = email3.split('.')
 print(email4)
 ```
+
