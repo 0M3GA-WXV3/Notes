@@ -39,7 +39,7 @@ for x in thing:
 
 ### Day 2
 
-*** Type Casting
+*** Types
 
 str() float() int() bool() tuple() list()
 
@@ -70,4 +70,9 @@ blank.append(email2[0])
 blank.append(email2[1].split('.')[0])
 blank.append(email2[1].split('.')[1])
 print(blank)
+```
+*** Type Casting
+
+```
+int(input(Give a number:\n))
 ```
