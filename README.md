@@ -88,3 +88,16 @@ elif a == b:
 elif a > b:
     print('Dang dude, that is more than 35')
 ```
+--- Fizz/Buzz activity
+```
+#!/usr/bin/env python3
+a = int(input('Give me something: '))
+if a % 3 == 0 and a % 5 == 0:
+    print('Fizzbuzz')
+elif a % 3 == 0:
+    print('Fizz')
+elif a % 5 == 0:
+    print('Buzz')
+print(a)
+
+```
