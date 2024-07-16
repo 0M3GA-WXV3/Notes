@@ -39,15 +39,15 @@ for x in thing:
 
 ### Day 2
 
-------------{Type Casting}-------------
+*** Type Casting
 
 str() float() int() bool() tuple() list()
 
------------{Basic Functions}-----------
+*** Basic Functions
 
 print() type() split() 
 
----{ Method Function }---
+*** Basic Functions
 
 ''.join()
 variable.split('')   -  Splits by default on spaces
