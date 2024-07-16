@@ -35,7 +35,7 @@ thing = ["thing1", "thing2"]
 for x in thing:
     print(x)
 ```
--+=+-======================-+=+-
+<hr>
 
 ### Day 2
 
