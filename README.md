@@ -46,11 +46,21 @@ for x in thing:
 
 ### Types
 
-str() float() int() bool() tuple() list()
+str() 
+float() 
+int() 
+bool() 
+tuple() 
+list()
 
 ### Basic Functions
 
-print() type() split() len()
+print() 
+type() 
+split() 
+append()
+replace()
+len()
 
 ### Basic Methods
 
