@@ -28,7 +28,7 @@ https://git.cybbh.space/programming/python/public/-/blob/master/activities/Pytho
 
 --------{Python}------------
 
-*For loop
+***For loop
 
 ```
 thing = ["thing1", "thing2"]
