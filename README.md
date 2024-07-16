@@ -47,10 +47,15 @@ for x in thing:
 ### Types
 
 str() 
+
 float() 
+
 int() 
+
 bool() 
+
 tuple() 
+
 list()
 
 ### Basic Functions
@@ -65,9 +70,13 @@ len()
 ### Basic Methods
 
 ''.join()
+
 variable.split('')
+
 variable.append('')
+
 variable.format('')
+
 
 ### Email Splitters
 ```
