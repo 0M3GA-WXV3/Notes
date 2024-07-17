@@ -153,9 +153,16 @@ while b == 23:
         print('too high')
         n == 0
         continue
-
 guess_number(23)
+```
 
+### Iterating through list items with While Loop
+```
+i = 0
+list = ['thing1 ', 'thing2 ', 'thing3 ', 'thing4 ', 'thing5 ', 'thing6 ', 'thing7 ', 'thing8 ', 'thing9 ', 'thing10 ']
+while i < len(list):
+  print(list[i])
+  i += 1
 ```
 
 ## Reading/Writing to a file
@@ -204,3 +211,9 @@ with open('school_prompt.txt') as fp:
                         p_words.append(words)
                         break
 ```
+
+### Args & Kwargs
+
+Args will have 1 * and will be a single variable
+
+Kwargs will have 2 * and be formatted as a variable length argument
