@@ -129,6 +129,8 @@ print(a)
 
 # Day 3
 
+
+### While loop example
 ```
 #!/usr/bin/env python3
 def guess_number(n):
