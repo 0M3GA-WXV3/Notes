@@ -172,14 +172,31 @@ outfile.read('')
 
 ### Appending
 
+Example
+
 ```
 with open('test.txt', 'a') as fp:
 fp.writelines('')
 ```
+
+List by every 3rd word
 
 ```
 three = []
 with open('school_prompt.txt') as fp:
     for line in fp:
         three.append(line.split()[2])
+```
+
+List by every word with certain character
+
+```
+p_words = []
+with open('school_prompt.txt') as fp:
+    for line in fp:
+            for words in line.split():
+                for char in words:
+                    if char == 'p':
+                        p_words.append(words)
+                        break
 ```
