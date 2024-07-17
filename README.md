@@ -128,3 +128,26 @@ print(a)
 <hr>
 
 # Day 3
+
+```
+#!/usr/bin/env python3
+def guess_number(n):
+    pass
+b = 23
+while b == 23: 
+    n = int(input('Give me a number:\n'))
+    if n < b:
+        print('too low')
+        n == 0
+        continue
+    elif n == b:
+        print('WIN')
+        break
+    elif n > b:
+        print('too high')
+        n == 0
+        continue
+
+guess_number(23)
+
+```
