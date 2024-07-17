@@ -33,8 +33,6 @@ https://runestone.academy/ns/books/published/fopp/Files/ChapterAssessment.html
 https://git.cybbh.space/programming/python/public/-/blob/master/activities/Python_Student_Handbook/PyStuHBK.adoc?ref_type=heads
 
 
-
-
 ## Python
 
 ### For loop
