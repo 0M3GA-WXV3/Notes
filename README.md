@@ -109,7 +109,7 @@ int(input("Give a number:\n"))
 ```
 a = int(input('Give me a number:\n'))
 b = 35
- if b > a:
+if b > a:
      print('It is less than 35')
 elif a == b:
     print('You gave 35?')
