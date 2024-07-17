@@ -153,3 +153,33 @@ while b == 23:
 guess_number(23)
 
 ```
+
+## Reading/Writing to a file
+
+### Writing
+
+```
+with open('test.txt', 'w') as fp:
+fp.write('')
+```
+
+### Reading
+
+```
+with open('test.txt', 'r') as outfile:
+outfile.read('')
+```
+
+### Appending
+
+```
+with open('test.txt', 'a') as fp:
+fp.writelines('')
+```
+
+```
+three = []
+with open('school_prompt.txt') as fp:
+    for line in fp:
+        three.append(line.split()[2])
+```
