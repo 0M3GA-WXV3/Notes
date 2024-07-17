@@ -25,6 +25,9 @@ https://cctc.cybbh.io/students/students/latest/Day_0_Setup.html
 
 https://vta.cybbh.space
 
+### Python Testing
+https://runestone.academy/ns/books/published/fopp/Files/ChapterAssessment.html
+
 ### Python Handbook
 
 https://git.cybbh.space/programming/python/public/-/blob/master/activities/Python_Student_Handbook/PyStuHBK.adoc?ref_type=heads
