@@ -70,6 +70,7 @@ split()
 append()
 replace()
 len()
+ord()
 
 ### Basic Methods
 
