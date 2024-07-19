@@ -215,6 +215,6 @@ with open('school_prompt.txt') as fp:
 
 ### Args & Kwargs
 
-Args will have 1 * and will be a single variable
+Args will have 1 * and will be treated like a normal variable without *
 
 Kwargs will have 2 * and be formatted as a variable length argument
