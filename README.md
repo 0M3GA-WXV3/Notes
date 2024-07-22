@@ -24,7 +24,11 @@ https://ss64.com/bash/
 
 ```cat/more/less/tail/head```    -    show data in file
 
-/etc/passwd formatting:
+```find``` (-name, -iname, -inum, -size | "file.txt")
+-    find a file based on either case sensitivity, inode #, bytes
+
+### /etc/passwd formatting:
+
 User ID  |  Group ID  |  /Home directory  |  Shell
 
 
