@@ -12,7 +12,7 @@ https://phoenixnap.com/kb/bash-printf
 
 https://baeldung.com/linux/bash-single-vs-double-brackets
 
-10.50.26.116
+https://10.50.26.116/challenges
 
 ## Day 1
 
