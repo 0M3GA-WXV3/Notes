@@ -19,12 +19,14 @@ https://10.50.26.116/challenges
 ### Linux Commands
 
 -  Symbols
-~~~
+```
+&& = Logical and
 ! = Logical Not
 | = Pipe
 >> = Append
 > = Redirect Output
-~~~
+```
+
 ```ls```    (-1, -lisa)    -    Show items
 
 ```rm```   (-f)   -    removes file
