@@ -44,6 +44,10 @@ params:
 
 ```egrep```    -    Extended grep
 
+```killall```    -     Kills everything
+
+```ps```(-elf)   -    shows process list
+
 ### /etc/passwd formatting:
 
 User ID  |  Group ID  |  /Home directory  |  Shell
