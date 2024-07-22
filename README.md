@@ -11,11 +11,17 @@ https://ss64.com/bash/
 ### Linux Commands
 
 ```ls```    (-1, -lisa)    -    Show items
+
 ```rm```   (-f)   -    removes file
+
 ```rmdir``` (-r, -f)  -    removes directory
+
 ```mkdir``` (-p)   -    makes directory
+
 ```touch``` (-t)   -    makes file or can edit timestamp
+
 ```pwd```        -      show present working directory
+
 ```cat/more/less/tail/head```    -    show data in file
 
 /etc/passwd formatting:
