@@ -25,10 +25,10 @@ https://ss64.com/bash/
 ```cat/more/less/tail/head```    -    show data in file
 
 ```find```    -    finds a file based on params
-continued:  
-(-name, -iname \*.txt, -maxdepth)
-(-gid/uid, / -type d, -size | -/+1G)
-(-a/c/mtime 0, -a/c/mmin 60)
+params:  
+- (-name, -iname \*.txt, -maxdepth)
+- (-gid/uid, / -type d, -size | -/+1G)
+- (-a/c/mtime 0, -a/c/mmin 60)
 
 ```sudo``` (!!)    -    runs last command as root
 
