@@ -6,6 +6,14 @@ https://cted.cybbh.io/tech-college/pns/public/pns/latest/guides/bash_sg.html
 
 https://ss64.com/bash/
 
+https://linuxhandbook.com/find-exec-command/
+
+https://phoenixnap.com/kb/bash-printf
+
+https://baeldung.com/linux/bash-single-vs-double-brackets
+
+10.50.26.116
+
 ## Day 1
 
 ### Linux Commands
@@ -26,11 +34,15 @@ https://ss64.com/bash/
 
 ```find```    -    finds a file based on params
 params:  
-- (-name, -iname \*.txt, -maxdepth)
+- (-name, -iname \*.txt, -maxdepth, -printf "%f %i\n")
 - (-gid/uid, / -type d, -size | -/+1G)
-- (-a/c/mtime 0, -a/c/mmin 60)
+- (-a/c/mtime 0, -a/c/mmin 60, -perm, 2>/dev/null)
 
 ```sudo``` (!!)    -    runs last command as root
+
+```grep``` (-E, i, -n, v)   -    Prints alike matching pattern
+
+```egrep```    -    Extended grep
 
 ### /etc/passwd formatting:
 
