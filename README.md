@@ -86,5 +86,5 @@ User ID  |  Group ID  |  /Home directory  |  Shell
 
 ```awk -F: '($7 == "/usr/sbin/nologin"){print $1, $6, $3}' fakepasswd```    -    string comparison conditionals
 
-```awk -F: '{print $3}' fakepasswd | sort -n```    -    n to sort numerically, nr for numerically reversed
-
+-    n to sort numerically, nr for numerically reversed, -k for columns, -t for field separator
+```awk -F: '{print $3}' fakepasswd | sort -n```    
