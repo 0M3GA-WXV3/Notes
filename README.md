@@ -70,7 +70,7 @@ User ID  |  Group ID  |  /Home directory  |  Shell
 
 ## Day 2
 
-### Awk
+### Awk & sort
 
 ```awk -F: '{print $NF}' fakepasswd```    -    NR prints first field, NF prints last field
 
@@ -90,3 +90,12 @@ User ID  |  Group ID  |  /Home directory  |  Shell
 ```awk -F: '{print $3}' fakepasswd | sort -n```    
 
 ```uniq```    -    must have sort before to work, works practically the same as "sort -u"
+
+### Alias
+set a command to do another command with
+```
+nano = 'vim'
+```
+### Sed
+
+```sed -e 's/' (/g)```    -    replaces characters/strings, /g makes it global, not specifying only does first instance found
