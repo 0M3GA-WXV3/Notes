@@ -78,11 +78,11 @@ User ID  |  Group ID  |  /Home directory  |  Shell
 
 ```awk -F: 'BEGIN {OFS="@"} {print $1,$3}' fakepasswd ```    -    specifying fields using output field separator
 
-```cat /etc/passwd | awk -F: '($3 >= 150){print $0}' ```    -    
+-  ```cat /etc/passwd | awk -F: '($3 >= 150){print $0}' ``` 
 
-```cat /etc/passwd | awk -F: '($3 >= 150){print $1, $6, $3}' fakepasswd```     -    
+-  ```cat /etc/passwd | awk -F: '($3 >= 150){print $1, $6, $3}' fakepasswd``` 
 
-```awk -F: '($7 == "/bin/bash"){print $1, $6, $3}' fakepasswd```    -    
+-  ```awk -F: '($7 == "/bin/bash"){print $1, $6, $3}' fakepasswd```
 
 ```awk -F: '($7 == "/usr/sbin/nologin"){print $1, $6, $3}' fakepasswd```    -    string comparison conditionals
 
