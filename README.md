@@ -99,3 +99,7 @@ nano = 'vim'
 ### Sed
 
 ```sed -e 's/' (/g)```    -    replaces characters/strings, /g makes it global, not specifying only does first instance found
+
+### Command substitution
+
+``` ```    -    
