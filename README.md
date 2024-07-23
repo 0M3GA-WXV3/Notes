@@ -73,5 +73,7 @@ User ID  |  Group ID  |  /Home directory  |  Shell
 ### Awk
 
 ```awk -F: '{print $NF}' fakepasswd```    -    NF prints last field
+
 ```awk -F: '($3 == 0) {print $1}' fakepasswd```    -    conditionals
+
 ```awk -F: 'BEGIN {OFS="@"} {print $1,$3}' fakepasswd ```    -    specifying fields
