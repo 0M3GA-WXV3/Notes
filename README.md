@@ -53,6 +53,8 @@ params:
 
 ```egrep```    -    Extended grep
 
+```(p)kill``` (-9)    -    Kills specified program based on id or name
+
 ```killall```    -     Kills everything
 
 ```ps```(-elf)   -    shows process list
@@ -65,3 +67,11 @@ User ID  |  Group ID  |  /Home directory  |  Shell
 
 
 <hr>
+
+## Day 2
+
+### Awk
+
+```awk -F: '{print $NF}' fakepasswd```    -    NF prints last field
+```awk -F: '($3 == 0) {print $1}' fakepasswd```    -    conditionals
+```awk -F: 'BEGIN {OFS="@"} {print $1,$3}' fakepasswd ```    -    specifying fields
