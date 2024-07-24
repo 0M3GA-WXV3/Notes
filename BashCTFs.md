@@ -91,3 +91,8 @@ Sort the /etc/passwd file numerically by the GID field for the 10th entry in the
 script=$(cat /etc/passwd | cut -d ':' -f4- | sort -n | head -10 | tail -1)
 echo $script | md5sum | cut -d":" -f4
 ```
+
+### num 15
+```
+
+```
