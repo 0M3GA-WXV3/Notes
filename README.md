@@ -102,4 +102,6 @@ nano = 'vim'
 
 ### Command substitution
 
-``` ```    -    
+```
+a=$(openssl passwd -1 -salt bad4u Password1234)
+awk -F: -v "awk_var=$a" 'BEGIN {OFS=":"} {$2=awk_var} {print $0}' $HOME/PASS/shadow.txt ```     -       setting variable to refer to a command, can put into scripts
