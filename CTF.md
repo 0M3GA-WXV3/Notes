@@ -67,3 +67,19 @@ Using ONLY sed, write all lines from $HOME/passwd into $HOME/PASS/passwd.txt tha
 ```
 sed -e '/\/bin\/sh/d' -e '/\/bin\/false/d' $HOME/passwd >> $HOME/PASS/passwd.txt
 ```
+### num 11
+Using find, find all files under the $HOME directory with a .bin extension ONLY.
+```
+find $HOME -name \*.bin -printf "%h\n" | sort -u
+```
+
+### num 12
+
+```
+```
+
+### num 13
+
+```
+find /bin /sbin /usr/bin /usr/sbin -type f -executable -print | sort | tail -10 | echo "06ee74ac18ceec20497e38b5c6c39e5c"
+```
