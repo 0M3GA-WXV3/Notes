@@ -61,6 +61,8 @@ params:
 
 ```cut``` (-d [Char to cut by] , -f1, -s)    -    cuts string outputs of file, add - at end of option to get everything following
 
+```wc (-l)```     -    Word counter, -l counts lines
+
 ### /etc/passwd formatting:
 
 User ID  |  Group ID  |  /Home directory  |  Shell
@@ -101,6 +103,7 @@ nano = 'vim'
 ```sed -e 's/' (/g)```    -    replaces characters/strings, /g makes it global, not specifying only does first instance found
 
 ### Command substitution
+``` ```
 
 ## Day 3
 
