@@ -79,7 +79,15 @@ find $HOME -name \*.bin -printf "%h\n" | sort -u
 ```
 
 ### num 13
-
+Find all executable files under the following four directories: /bin, /sbin, /usr/bin ,/usr/sbin
+Sort the filenames with absolute path, and get the md5sum of the 10th file from the top of the list.
 ```
 find /bin /sbin /usr/bin /usr/sbin -type f -executable -print | sort | tail -10 | echo "06ee74ac18ceec20497e38b5c6c39e5c"
+```
+
+### num 14
+Sort the /etc/passwd file numerically by the GID field for the 10th entry in the sorted passwd file, get an md5 hash of that entry’s home directory.
+```
+script=$(cat /etc/passwd | cut -d ':' -f4- | sort -n | head -10 | tail -1)
+echo $script | md5sum | cut -d":" -f4
 ```
