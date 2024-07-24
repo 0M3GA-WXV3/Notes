@@ -59,7 +59,7 @@ params:
 
 ```ps```(-elf)   -    shows process list
 
-```cut``` (-d [Char to cut by] , -f1, -s)    -    cuts string outputs of file
+```cut``` (-d [Char to cut by] , -f1, -s)    -    cuts string outputs of file, add - at end of option to get everything following
 
 ### /etc/passwd formatting:
 
@@ -102,6 +102,6 @@ nano = 'vim'
 
 ### Command substitution
 
-```
-a=$(openssl passwd -1 -salt bad4u Password1234)
-awk -F: -v "awk_var=$a" 'BEGIN {OFS=":"} {$2=awk_var} {print $0}' $HOME/PASS/shadow.txt ```     -       setting variable to refer to a command, can put into scripts
+
+### Compression
+```tar (-czf)(-cvf)```    -    can compress a file
