@@ -102,6 +102,27 @@ nano = 'vim'
 
 ### Command substitution
 
+## Day 3
+
+### if else
+```
+contents=$(cat simple.txt)
+if [[ $contents == "tacos" ]]; then
+  echo "are good on tuesdays"
+elif [[ $contents == "costco is cool" ]]; then
+  echo "and is cheap"
+elif [[ $contents == "tacos" ]]; then
+  echo "tasty but will make you fail ht/wt"
+else
+  echo "no tax at commisary"
+fi
+```
+### Variable substitition
+```
+A="him"
+echo This guy is literally $A
+echo There is no girl that is a $A
+```
 
 ### Compression
 ```tar (-czf)(-cvf)```    -    can compress a file
