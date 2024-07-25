@@ -100,7 +100,7 @@ nano = 'vim'
 ```
 ### Sed
 
-```sed -e 's/' (/g)```    -    replaces characters/strings, /g makes it global, not specifying only does first instance found
+```sed -e 's/' (/g, /d)```    -    replaces characters/strings, /d delete the line, /g makes it global, not specifying only does first instance found
 
 ### Command substitution
 ``` ```
