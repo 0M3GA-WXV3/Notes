@@ -130,6 +130,10 @@ echo There is no girl that is a $A
 ### Compression
 ```tar (-czf)(-cvf)```    -    can compress a file
 
+
+------------------------------------------------------------------------------------------------------------
+
+
 #1
 Create a script that will perform the following actions:
 
