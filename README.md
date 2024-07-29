@@ -76,7 +76,7 @@ $array | foreach-object{get-alias $_}
 
 ``` $reversearray = -3..15; $reverse = $reversearray[($reversearray.length-1)..0]```  -  Creates a reverse array
 
-### Setting fields
+### Setting fields on a variable
 ```
 $employee1 = [ordered]@{}
 $employee2 = [ordered]@{}
