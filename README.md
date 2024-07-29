@@ -23,8 +23,10 @@ https://cted.cybbh.io/tech-college/pns/public/pns/latest/powershell/pe_running_c
 ### Variables
 ```$seventyfive = 75```    -    Demonstrations
 
-```$array = "yuh","yuh2","yuh3" \n$array | foreach-object{get-alias $_}```
-
+```
+$array = "yuh","yuh2","yuh3"
+$array | foreach-object{get-alias $_}
+```
 ### Verbage & Basic Commands
 
 ```get-help (command/*log*) (-Examples/-full/-online)```    -      Shows info on command, find commands with word in apostraphes, and show examples/full documentation
