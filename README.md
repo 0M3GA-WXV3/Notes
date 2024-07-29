@@ -63,3 +63,10 @@ $array | foreach-object{get-alias $_}
 ### "
 -  Double quote will interperet whatever is inside it, so putting a variable inside double quote will work properly
 
+## Format
+```"{0} + {1} = (2)" -f $sum```    -    Will make what is in quotes the format for which to put the variables out
+
+## Sequence
+
+
+``` $reversearray = -3..15; $reverse = $reversearray[($reversearray.length-1)..0]```  -  Creates a reverse array
