@@ -84,12 +84,12 @@ $employee2 = [ordered]@{}
 $employee1.First = "Mick"
 $employee1.Last = "Mundee"
 $employee1.ID = "008"
-$employee1.Job = "A Professional"
+$employee1["Job"] = "A Professional"
 $employee1
 
 $employee2.First = "Jane"
 $employee2.Last = "Doe"
 $employee2.ID = "002"
-$employee2.Job = "A Soldier"
+$employee2["Job"] = "A Soldier"
 $employee2
 ```
