@@ -20,6 +20,12 @@ https://cted.cybbh.io/tech-college/pns/public/pns/latest/powershell/pe_running_c
 
 https://red-gate.com/simple-talk/sysadmin/powershell/when-to-quote-in-powershell
 
+https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_hash_tables?view=powershell-7.4
+
+https://www.tutorialspoint.com/powershell/powershell_brackets.htm
+
+
+
 <hr>
 
 ## Variables
@@ -68,5 +74,22 @@ $array | foreach-object{get-alias $_}
 
 ## Sequence
 
-
 ``` $reversearray = -3..15; $reverse = $reversearray[($reversearray.length-1)..0]```  -  Creates a reverse array
+
+### Setting fields
+```
+$employee1 = [ordered]@{}
+$employee2 = [ordered]@{}
+
+$employee1.First = "Mick"
+$employee1.Last = "Mundee"
+$employee1.ID = "008"
+$employee1.Job = "A Professional"
+$employee1
+
+$employee2.First = "Jane"
+$employee2.Last = "Doe"
+$employee2.ID = "002"
+$employee2.Job = "A Soldier"
+$employee2
+```
