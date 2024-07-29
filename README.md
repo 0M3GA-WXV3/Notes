@@ -42,3 +42,8 @@ $array | foreach-object{get-alias $_}
 ```set-alias (edit) (executable file)```      -      Makes new alias referring to set executable
 
 ```remove-item (alias):(name of alias) ```      -     Removes an alias
+
+```
+(get-process).id.processname
+(getprocess notepad).kill()
+```      -      Using parentheses and period between the portions of a command's output, can specify field displayed
