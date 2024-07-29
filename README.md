@@ -18,6 +18,8 @@ https://ss64.com/ps/
 
 https://cted.cybbh.io/tech-college/pns/public/pns/latest/powershell/pe_running_cmdlets.html
 
+https://red-gate.com/simple-talk/sysadmin/powershell/when-to-quote-in-powershell
+
 <hr>
 
 ### Variables
