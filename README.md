@@ -45,3 +45,7 @@ $array | foreach-object{get-alias $_}
 
 ```(get-process).id.processname```
 ```(getprocess notepad).kill()```       -      Using parentheses and period between the portions of a command's output, can specify field displayed
+
+```get-process | get-member -membertype properties```      -      Show fields of command
+
+```get-service | ft name, status```      -      Show specific portions of command in format table
