@@ -36,3 +36,9 @@ $array | foreach-object{get-alias $_}
 ```get-process```    -    Shows all running processes and associated data
 
 ```get-childitem (-path) (-filter *.exe) (-recurse) (-name)```    -      Shows everything in a given directory, with or without a filter
+
+```get-alias (-Definition) (commands)```      -      retreives attached alias'
+
+```set-alias (edit) (executable file)```      -      Makes new alias referring to set executable
+
+```remove-item (alias):(name of alias) ```      -     Removes an alias
