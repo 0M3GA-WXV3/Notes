@@ -34,7 +34,7 @@ https://www.tutorialspoint.com/powershell/powershell_brackets.htm
 ```del variable:(variable name)```      -      Removes a variable
 
 ```
-$array = "yuh","yuh2","yuh3"
+$array = "yuh","uhuh2","ahah3"
 $array | foreach-object{get-alias $_}
 ```
 ## Verbage & Basic Commands
