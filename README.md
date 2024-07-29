@@ -22,7 +22,7 @@ https://red-gate.com/simple-talk/sysadmin/powershell/when-to-quote-in-powershell
 
 <hr>
 
-### Variables
+## Variables
 ```$seventyfive = 75```    -    Basic Demonstration
 
 ```del variable:(variable name)```      -      Removes a variable
@@ -31,7 +31,7 @@ https://red-gate.com/simple-talk/sysadmin/powershell/when-to-quote-in-powershell
 $array = "yuh","yuh2","yuh3"
 $array | foreach-object{get-alias $_}
 ```
-### Verbage & Basic Commands
+## Verbage & Basic Commands
 
 ```get-help (command/*log*) (-Examples/-full/-online)```    -      Shows info on command, find commands with word in apostraphes, and show examples/full documentation
 
@@ -55,11 +55,11 @@ $array | foreach-object{get-alias $_}
 ```get-service | ft name, status```      -      Show specific portions of command in format table
 ```get-service | where-object -property status -eq 'Stopeed' ```
 
-### Quotation
+## Quotation
 
-## '
+### '
 -  Single quote will make whatever inside it literal, so don't put variable name in here
 
-## "
+### "
 -  Double quote will interperet whatever is inside it, so putting a variable inside double quote will work properly
 
