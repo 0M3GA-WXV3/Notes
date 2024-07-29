@@ -43,8 +43,8 @@ $array | foreach-object{get-alias $_}
 
 ```remove-item (alias):(name of alias) ```      -     Removes an alias
 
-```(get-process).id.processname```      -      Using parentheses and period between the portions of a command's output, can specify field displayed
-```(getprocess notepad).kill()```
+```(get-process).id.processname```
+```(getprocess notepad).kill()```     -      Using parentheses and period between the portions of a command's output, can specify field displayed
 
 ```get-process | get-member -membertype properties```      -      Show fields of command
 
