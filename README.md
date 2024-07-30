@@ -93,3 +93,53 @@ $employee2.ID = "002"
 $employee2["Job"] = "A Soldier"
 $employee2
 ```
+
+# Day 2
+
+## Command Substitution
+   -    Example of command substitution in powershell, invoke-command (&) denotes to run the following function
+```
+$myblock = {get-service | format-table name, status}
+& $myblock
+```
+## Sorting & Grouping
+
+```get-childitem | sort-object (-property) lengeth (-descending)```     -    Sorting fetched items by the property of length
+
+```get-childitem C:\ | group-object {$_.length -lt 1kb}```    -    Grouping items by file size
+
+```get-process | select-object (-last/-first) 10```    -    Selecting first or last 10 entries of processes, similar to head/tail
+
+```get-process | select-object -ExpandProperty name```    -    Sorts by certain field
+
+```get-process | where-object {$_.company -like 'micro*'} | format-table Directory, name, length```     -    Sorts the different objects to find anything with company info attached from companies starting with "micro"
+
+```get-process | where-object {$_.name -notlike 'powershell*'} | sort-object id -Descending```     -    Returns every object, sorted by ID if it is not a powershell instance
+
+```get-process | where-object processname -ne "Idle" | sort-object starttime | select-object -last 10 | format-table processname, starttime | 2>$null```      -      Returns all objects 
+
+## Array piping
+
+Array objects being piped into code block, allowing iteration of foreach to add array objects together
+```
+$array = 1,2,3,4,5
+$sum = 0
+$array | foreach-object {$sum += $_}
+$sum
+```
+
+## Object
+  -  Creating a New Object
+```
+$MyTruck = new-object object
+```
+  -  Adding new values to the Object
+```
+Add-Member -MemberType NoteProperty -Name Color -Value White -InputObject $MyTruck
+```
+```
+Add-Member -Me NoteProperty -in $MyTruck -Na Make -Value Toyotas
+```
+```
+Add-Member -InputObject $MyTruck NoteProperty Model "Camry"
+```
