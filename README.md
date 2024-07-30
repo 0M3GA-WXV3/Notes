@@ -148,7 +148,7 @@ $MyTruck | Add-Member ScriptMethod Parking {"Found a spot under a tree"}
 ```
 
 ## RegEx
-A RegEx pattern matching to a string 
+   -   A RegEx pattern matching to a string 
 ```
 $text = "Username is GOAT445"
 $pattern = '([A-T]{4})(\d{3})'
