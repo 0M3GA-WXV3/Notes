@@ -257,3 +257,15 @@ while($num -lt 10) {
 ```get-content ./example.txt```
 
 ```add-content .\example.txt -value "When my homie says, On Crud? I just say, On crud on BLUD!"```
+
+## Starting and Stopping processing using arrays
+* Starting
+```
+$array = "notepad", "msedge", "mspaint"
+$array | ForEach-Object { Start-Process -name $_ }
+```
+* Stopping
+```
+$array = "notepad", "msedge", "mspaint"
+$array | ForEach-Object { Stop-Process -name $_ }
+```
