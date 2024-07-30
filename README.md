@@ -129,11 +129,11 @@ $sum
 ```
 
 ## Objects
-  -  Creating a New Object
+   -    Creating a New Object
 ```
 $MyTruck = new-object object
 ```
-  -  Adding new values to the Object
+   -    Adding new values to the Object
 ```
 Add-Member -MemberType NoteProperty -Name Color -Value White -InputObject $MyTruck
 ```
@@ -142,4 +142,35 @@ Add-Member -Me NoteProperty -in $MyTruck -Na Make -Value Toyotas
 ```
 ```
 Add-Member -InputObject $MyTruck NoteProperty Model "Camry"
+```
+```
+$MyTruck | Add-Member ScriptMethod Parking {"Found a spot under a tree"}
+```
+
+## RegEx
+A RegEx pattern matching to a string 
+```
+$text = "Username is GOAT445"
+$pattern = '([A-T]{4})(\d{3})'
+$text -match $pattern
+```
+
+## If else
+```
+$x = 4
+if ($x -eq 5) {
+   write-host "Yeah"
+}
+elseif ($x -eq 4) {
+   write-host "Nah"
+}
+elseif ($x -eq 2) {
+   write-host "Maybe"
+}
+elseif ($x -gt 6) {
+   write-host "Nah"
+}
+else {
+   write-host "Who am I?"
+}
 ```
