@@ -201,7 +201,18 @@ ForEach ($item in gci C: -recurse){$item.name}
 ```
 
 ## While Loop
+   -    Iterate through until string matches what it wants
+```
 $var = ""
 while($var -ne "Marin Crops"){
    $var = read-host "Best Brnache?"
 }
+```
+   -    Iterate through until number is reached
+```
+$num = 0
+do {
+   $num
+   $num++
+}until($num -gt 3)
+```
