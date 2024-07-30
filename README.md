@@ -269,3 +269,11 @@ $array | ForEach-Object { Start-Process $_ }
 $array = "notepad", "msedge", "mspaint"
 $array | ForEach-Object { Stop-Process -name $_ }
 ```
+
+### showing info on programs
+```
+$array = "notepad"
+foreach($array in $array){
+get-process | where-object{$_.Name -like $array} | format-table -property id, name, starttime, totalprocessortime, virtualmemorysize, workingset64
+}
+```
