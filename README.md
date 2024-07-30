@@ -128,7 +128,7 @@ $array | foreach-object {$sum += $_}
 $sum
 ```
 
-## Object
+## Objects
   -  Creating a New Object
 ```
 $MyTruck = new-object object
