@@ -176,5 +176,32 @@ else {
 ```
 
 ## For Each
+   -   Iteration through list of numbers
+```
 $nums = 1,2,3,4,5
 $num | foreach-object{$_ * 2}
+```
+   -   Iteration through list of strings
+```
+$list = 'a', 'b', 'c', 'd', 'e'
+$list | ForEach-Object {$_.toupper()}
+```
+   -   Inserting string between list iteration
+```
+$cars = "DeLorean", "Corvette", "Lexus", "Tesla"
+foreach($cars in $cars){"Stupid ass $cars"}
+```
+   -   Uppercasing every process listed
+```
+get-process | ForEach-Object {$_.Name} | ForEach-Object {$_.toupper()}
+```
+   -   Lists every file in Directory "C:"
+```
+ForEach ($item in gci C: -recurse){$item.name}
+```
+
+## While Loop
+$var = ""
+while($var -ne "Marin Crops"){
+   $var = read-host "Best Brnache?"
+}
