@@ -174,3 +174,7 @@ else {
    write-host "Who am I?"
 }
 ```
+
+## For Each
+$nums = 1,2,3,4,5
+$num | foreach-object{$_ * 2}
