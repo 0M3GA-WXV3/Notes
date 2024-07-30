@@ -251,7 +251,9 @@ while($num -lt 10) {
 }
 ```
 
-## Set and Get content
+## Add, Set, and Get content
 ```set-content -path ./example.txt -value "string desired"```
 
 ```get-content ./example.txt```
+
+```add-content .\example.txt -value "When my homie says, On Crud? I just say, On crud on BLUD!"```
