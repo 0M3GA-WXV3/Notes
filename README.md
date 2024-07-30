@@ -262,7 +262,7 @@ while($num -lt 10) {
 * Starting
 ```
 $array = "notepad", "msedge", "mspaint"
-$array | ForEach-Object { Start-Process -name $_ }
+$array | ForEach-Object { Start-Process $_ }
 ```
 * Stopping
 ```
