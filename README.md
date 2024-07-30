@@ -214,5 +214,5 @@ $num = 0
 do {
    $num
    $num++
-}until($num -gt 3)
+}until($num -eq 101)
 ```
