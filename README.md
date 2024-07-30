@@ -216,3 +216,42 @@ do {
    $num++
 }until($num -eq 101)
 ```
+
+## For Loop
+   -    Basic For Loop
+```
+for($num = 1; $num -le 3; $num++){$num}
+```
+   -   Display IP range for 
+```
+for($i = 0; $i -le 255; $i++) {
+   write-host 192.168.0.$i}
+```
+   -   Use of Break & Continue
+* Break
+```
+$num = 0
+while($num -lt 10) {
+   $num += 1
+   if($num -eq 2) {
+   break
+    }
+    $num
+}
+```
+* Continue
+```
+$num = 0
+while($num -lt 10) {
+   $num += 1
+   if($num -eq 2) {
+   continue
+    }
+    $num
+}
+```
+
+## Set and Get content
+```set-content -path ./example.txt -value "string desired"```
+
+```get-content ./example.txt```
