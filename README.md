@@ -298,6 +298,6 @@ get-process | where-object{$_.Name -like $array} | format-table -property id, na
 
 # Day3 
 
-## Functions
+## Functions (Kinda retarded)
 
 ####
