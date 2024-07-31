@@ -300,4 +300,51 @@ get-process | where-object{$_.Name -like $array} | format-table -property id, na
 
 ## Functions (Kinda retarded)
 
-####
+   -   Input being ranked and sorted based on character count
+```
+function get-longestname{
+    Begin{
+        $count = 0
+        $states = @()
+        }
+        Process{
+            while($count -lt 3){
+                $usr = Read-Host "Enter a word"
+                $states += $usr
+                $count += 1
+            }
+        }
+        End{
+            $list = $states | sort -Property length -Descending
+            forEach($i in $list){
+                "$i`: " + $i.length
+            }
+        }
+}
+```
+   -   Get Netowrking Information
+```
+Function get-netinfo {
+    $pattern = '.*?((\d{1,3}\.){3}\d{1,3})'
+    $netinfo = ipconfig
+        $ip = $netinfo -match "IPV4$pattern" | `
+        %{if($_ -match $pattern){$Matches[1]}}
+        $subnet = $netinfo -match "Subnet$pattern" | `
+        %{if($_ -match $pattern){$Matches[1]}}
+        $gate = $netinfo -match "Gateway$pattern" | `
+        %{if($_ -match $pattern){$Matches[1]}}
+    "IP: {0}`nSubnet: {1} `nGateway: {2}" -f $ip,$subnet,$gate
+}
+```
+   -   Get URLs from a file
+```
+Function get-urlinfo {
+    $file = Get-Content .\dns.txt
+    $regex = '([a-zA-Z0-9\-\.]+\.(com|net|org))'
+    foreach($line in $file) {
+        if($line -match $regex) {
+            $Matches
+        }
+    }
+}
+```
