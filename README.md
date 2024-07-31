@@ -94,6 +94,24 @@ $employee2["Job"] = "A Soldier"
 $employee2
 ```
 
+### Math (Square Root, Exponents)
+
+```[math]::sqrt(64)```
+
+```[math]::pow(6,2)```
+
+### Searching
+   -   Where-Object
+```'msedge' -like '*MS*'```
+
+```'msedge' -clike '*MS*'```
+
+```'msedge' -like '*MS*'```
+
+### Averaging
+   -   Averaging properties
+1,2,3,4,5 | Measure-Object -Average
+
 # Day 2
 
 ## Command Substitution
@@ -256,7 +274,7 @@ while($num -lt 10) {
 
 ```get-content ./example.txt```
 
-```add-content .\example.txt -value "When my homie says, On Crud? I just say, On crud on BLUD!"```
+```add-content ./example.txt -value "When my homie says, On Crud? I just say, On crud on BLUD!"```
 
 ## Starting and Stopping processing using arrays
 * Starting
@@ -278,4 +296,8 @@ get-process | where-object{$_.Name -like $array} | format-table -property id, na
 }
 ```
 
-# Day 3
+# Day3 
+
+## Functions
+
+####
