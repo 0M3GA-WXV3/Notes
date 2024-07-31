@@ -277,3 +277,5 @@ foreach($array in $array){
 get-process | where-object{$_.Name -like $array} | format-table -property id, name, starttime, totalprocessortime, virtualmemorysize, workingset64
 }
 ```
+
+# Day 3
