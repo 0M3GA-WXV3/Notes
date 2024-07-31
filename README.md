@@ -343,8 +343,13 @@ Function get-urlinfo {
     $regex = '([a-zA-Z0-9\-\.]+\.(com|net|org))'
     foreach($line in $file) {
         if($line -match $regex) {
-            $Matches
+            $Matches[1]
         }
     }
 }
 ```
+
+## Split and Join
+```'8.8.8.8'.split(".") ([0])```    -   Will split string into array, specifying index position allows for 1st position
+
+```1,2,3,4,5 -join ""```   -    Will join all portions of the array into a single string
