@@ -5,14 +5,6 @@ Create a script that will perform the following actions:
     Comments are lines which include a '#' as the first character.
     Do not print anything else to standard output for this question.
     The format of the input file will be similar to that of the /etc/hosts file.
-
-function q1()
-{
-  #Valid Variables are:
-  filename=$1
-  #You code here
-}
-
 function q1()
 {
   #Valid Variables are:
@@ -30,14 +22,6 @@ Create a script that will perform the following actions:
     Locate all files that end in ".log" in the specified directory by "logs"
     Create an archive of those files in a gzipped tar ball
     Store the gzipped tar ball as the file name specified in "archive"
-
-function q1()
-{
-  #Valid Variables are:
-  logs=$1
-  archive=$2
-  #Your code here
-}
 
 function q1()
 {
@@ -69,19 +53,11 @@ Create a script that will perform the following actions:
 
 IMPORTANT NOTE: The contents of the file are what matter, not the filename. No filenames will contain critical.
 
-function q1()
-{
-  #Valid Variables are:
-  searchdir=$1
-  output=$2
-  #Your code here
-}
 
 function q1() {
   # Valid Variables are:
   searchdir=$1
   output=$2
-
   # Your code here
   find "$searchdir" -type f | while read -r file; do
     if grep -qi "CRITICAL" "$file"; then
@@ -103,14 +79,6 @@ Create a script that will perform the following actions:
 
     Given a space separated list of directories in "dirlist", your code will obtain the total number of files in all the directories. Subdirectories will NOT be included in the total.
     Print to standard output the total number of files
-
-function q1()
-{
-  #Valid Variables are:
-  dirlist=$1
-  #You code here
-}
-
 function q1()
 {
   dirlist=$1
@@ -145,13 +113,6 @@ Create a script that will perform the following actions:
 
 function q1()
 {
-  #Valid Variables are:
-  dirdel=$1
-  #Your code here
-}
-
-function q1()
-{
   # Valid Variables are:
   dirdel=$1
   find "$dirdel" -mindepth 1 -type f -delete
@@ -170,13 +131,6 @@ Create a script that will perform the following actions:
     Create a file specified by the name contained in parameter "newfile"
     Set the modified date of the file to June 14, of the current year
     Set the modified time to the file to 0830
-
-function q1()
-{
-  #Valid Variables are:
-  newfile=$1
-  #Your code here
-}
 
 
 function q1()
@@ -202,15 +156,6 @@ Create a script that will perform the following actions:
     If the contents of the file are "def", print "789" to standard output
     If the contents of the file are "xyz", print "000" to standard output
     If the contents of the file are not "abc", "def", or "xyz", print "Error" to standard output
-
-function q1()
-{
-  #Valid Variables are:
-  filename=$1
-  #Your code here
-}
-
-
 
 function q1()
 {
@@ -241,15 +186,6 @@ function q1()
 
 Create a script that will perform the following actions: Copy all lines from the file specified by "src" to the file specified by "dst" which contain the text specified by "match"
 
-function q1()
-{
-  #Valid Variables are:
-  src=$1
-  dst=$2
-  match=$3
-  #Your code here
-}
-
 
 function q1()
 {
@@ -273,14 +209,6 @@ Create a script that will perform the following actions:
     Terminate the process that has the name specified by 'var'.
     The name of the process in 'var' varies and will change each time the application is run
 
-function q1()
-{
-  #Valid Variables are:
-  var=$1
-  #Your code here
-}
-
-
 
 function q1()
 {
@@ -302,13 +230,6 @@ Create a script that will perform the following actions:
     Ensure that the full path to each file is used for the sort and is included in the output.
     The list should include all files in the specified directory and any subdirectories.
     Print this list to the screen, one item on each line.
-
-function q1()
-{
-  #Valid Variables are:
-  dirpath=$1
-  #Your code here
-}
 
 function q1()
 {
