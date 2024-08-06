@@ -37,6 +37,6 @@ http://10.50.22.197:8000/    -    CTFs
 
   -  Powershell
 
-### -{  Disabling Windows Defender when needed }-
+### Disabling Windows Defender when needed
 
   ```Set-MpPreference -DisableRealtimeMonitoring $TRUE```
