@@ -17,6 +17,8 @@ http://10.50.22.197:8000/    -    CTFs
   -   The XX in the photo is an insert for the stack number (ex. 10.9.0.6 = Terra)
   -   The login info is color coded for each of the machines it is for (ex. garviel = Terra)
 
+# Day 2
+
 ## Types of Persisitance
 
   -  Registry Keys
@@ -43,3 +45,10 @@ http://10.50.22.197:8000/    -    CTFs
 ### Disabling Windows Defender when needed
 
   ```Set-MpPreference -DisableRealtimeMonitoring $TRUE```
+
+# Day 3
+
+## Basic Bash commands
+You know basic bash you retard
+
+##
