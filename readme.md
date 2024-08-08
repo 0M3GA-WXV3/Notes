@@ -66,6 +66,7 @@ Get-Content C:\Windows\Panther\Setupact.log | Select-String "Detected boot envir
 ```
 or
 ```bcdedit | findstr /i winload```
+
   -  Winload.exe = BIOS
   -  Winload.efi = UEFI
 ### BIOS
@@ -78,6 +79,7 @@ or
 
 ### bcdedit
 ```bcdedit /deletevalue {current} safeboot```
+
 ```bcdedit /set {bootmgr} timeout 10```
 
 ## Checking running and stopped Processes
