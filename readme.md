@@ -73,3 +73,15 @@ or
   -   Windows 7 SP1 and newer used bootmgr as bootloader.
 ### UEFI
   -   Newer medium to start the computer in a basic state, newest standard will read an EFI partition in the boot drive.
+
+## Fixing broken Windows Boot Config
+
+### bcdedit
+
+## Checking running and stopped Processes
+
+  -  In CMD:
+      ```tasklist /v```
+  -  In Powershell:
+      ```get-service | format-list *```
+      ```get-ciminstance win32_service | format-list name pathname```
