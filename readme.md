@@ -81,7 +81,9 @@ or
 ## Checking running and stopped Processes
 
   -  In CMD:
+
       ```tasklist /v```
+     
   -  In Powershell:
 
       ```get-service | format-list *```
