@@ -77,6 +77,8 @@ or
 ## Fixing broken Windows Boot Config
 
 ### bcdedit
+```bcdedit /deletevalue {current} safeboot```
+```bcdedit /set {bootmgr} timeout 10```
 
 ## Checking running and stopped Processes
 
