@@ -85,4 +85,5 @@ or
   -  In Powershell:
 
       ```get-service | format-list *```
+     
       ```get-ciminstance win32_service | format-list name pathname```
