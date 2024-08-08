@@ -54,6 +54,6 @@ You know basic bash you retard
 # Day 4
 
 ## Boot Process
-![image](https://github.com/user-attachments/assets/a1baf9ab-ce7d-48b4-be95-c5351144d7d1)
+![image](https://github.com/user-attachments/assets/1970aad0-4ce2-4acb-abbe-36086aad19ba)
   -  Windows boot process, has set path for booting programs to execute as to setup windows for the user to start using.
   -  Can be exploited and have forms of persistance that are able to launch at the lowest levels.
