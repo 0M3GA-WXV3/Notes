@@ -57,3 +57,19 @@ You know basic bash you retard
 ![image](https://github.com/user-attachments/assets/1970aad0-4ce2-4acb-abbe-36086aad19ba)
   -  Windows boot process, has set path for booting programs to execute as to setup windows for the user to start using.
   -  Can be exploited and have forms of persistance that are able to launch at the lowest levels.
+
+## BIOS vs. UEFI
+How to tell whether or not it is UEFI or BIOS
+```
+findstr /C:"Detected boot environment" "C:\Windows\Panther\Setupact.log"
+Get-Content C:\Windows\Panther\Setupact.log | Select-String "Detected boot environment"
+```
+or
+```bcdedit | findstr /i winload```
+  -  Winload.exe = BIOS
+  -  Winload.efi = UEFI
+### BIOS
+  -   Firmware to start the computer in a state where it can take a bootable medium (usually MBR) and start it, typically regarded as legacy. Boot loader for older windows was NTLDR
+  -   Windows 7 SP1 and newer used bootmgr as bootloader.
+### UEFI
+  -   Newer medium to start the computer in a basic state, newest standard will read an EFI partition in the boot drive.
