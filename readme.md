@@ -93,3 +93,21 @@ or
       ```get-service | format-list *```
      
       ```get-ciminstance win32_service | format-list name pathname```
+
+# Day 5
+
+### BIOS and UEFI
+  -  BIOS is older, meant just to boot up the computer to read the MBR and launch boot loader
+  -  UEFI is newer, has driver support, secure boot, and reads GPT partition table to launch EFI boot loader
+
+### MBR and GPT
+  -  MBR is first 512bytes on disk, capable of 4 usable partitions, maximum size of 2 terabytes
+  -  GPT capable of 128 usable partitions, supports maximum size of 9 zettabytes,
+
+### Reading Hex Dumps
+```
+00000000: cd 10 ac 3c 00 75 f4 c3 fa b7 12 e6 00 00 80 00 
+00000010: 21 02 83 0f 2e 40 00 08 00 00 df f7 ff 0f 00 00
+```
+^                                          ^
+This portion is the Byte offset            Every character is 4 bits, each duo of characters a byte. It shows 16 bytes from index 0-0F and index 10-1F
