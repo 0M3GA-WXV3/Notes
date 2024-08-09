@@ -112,3 +112,4 @@ or
 &emsp;&emsp;&emsp;&emsp;^&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;^
 
 This portion is the Byte offset&emsp;&emsp;&emsp;Every character is 4 bits, each duo of characters a byte. It shows 16 bytes from index 0-0F and index 10-1F
+
