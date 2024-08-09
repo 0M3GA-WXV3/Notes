@@ -110,4 +110,5 @@ or
 00000010: 21 02 83 0f 2e 40 00 08 00 00 df f7 ff 0f 00 00
 ```
 ^&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;^
+
 This portion is the Byte offset            Every character is 4 bits, each duo of characters a byte. It shows 16 bytes from index 0-0F and index 10-1F
