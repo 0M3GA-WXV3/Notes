@@ -113,3 +113,13 @@ or
 
 This portion is the Byte offset&emsp;&emsp;&emsp;Every character is 4 bits, each duo of characters a byte. It shows 16 bytes from index 0-0F and index 10-1F
 
+# Day 6
+
+## Process Validation
+ Check the running processes, what DLLs it uses, as well as its PID
+```get-ciminstance ```
+```get-process ```
+ Check scheduled tasks
+ Check folders to see if there is a slightly differently named duplicate
+ Check registry keys
+ Use system internals tools 
