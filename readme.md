@@ -6,6 +6,8 @@ https://os.cybbh.io/public/os/latest/index.html    -      Class resources & guid
 
 http://10.50.22.197:8000/    -    CTFs
 
+https://os.cybbh.io/public/os/latest/001_operating_systems/activity_point_breakdown.html   -   Point Breakdown
+
 <hr>
 
 ## Network Range
