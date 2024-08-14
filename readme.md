@@ -125,3 +125,13 @@ This portion is the Byte offset&emsp;&emsp;&emsp;Every character is 4 bits, each
  Check folders to see if there is a slightly differently named duplicate
  Check registry keys
  Use system internals tools 
+
+# Day 7
+
+## Windows Auditing
+  -  Corelate SID to Username
+    ```get-wmiobject wind32_useraccount | select name,sid```
+  -  Artifacts
+    ```HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{GUID}\Count\```
+    ```get-itemproperty "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{GUID}\Count\```  -  Encoded in ROT13
+    ```get-eventlog -logname security | fl * | more```
