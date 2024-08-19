@@ -135,3 +135,5 @@ This portion is the Byte offset&emsp;&emsp;&emsp;Every character is 4 bits, each
     ```HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{GUID}\Count\```
     ```get-itemproperty "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{GUID}\Count\```  -  Encoded in ROT13
     ```get-eventlog -logname security | fl * | more```
+
+# Day 8
