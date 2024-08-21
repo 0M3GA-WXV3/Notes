@@ -33,6 +33,18 @@ https://os.cybbh.io/public/os/latest/001_operating_systems/activity_point_breakd
 
   -  Startup Folder
 
+  -  /sbin/init or /lib/systemd/systemd
+
+  -  /etc/profiles
+    
+  -  /etc/inittab
+
+  -  /etc/init
+
+  -  /etc/* rc *
+
+  -  bashrc
+
 ### Methods of checking persistance
 
   -  Regedit
