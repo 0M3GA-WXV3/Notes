@@ -144,10 +144,9 @@ This portion is the Byte offset&emsp;&emsp;&emsp;Every character is 4 bits, each
   -  Corelate SID to Username
     ```get-wmiobject wind32_useraccount | select name,sid```
   -  Artifacts
+  -  
     ```HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{GUID}\Count\```
-
-    ```get-itemproperty "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{GUID}\Count\```  -  Encoded in ROT13
-    
+    ```get-itemproperty "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{GUID}\Count\```   -  Encoded in ROT13
     ```get-eventlog -logname security | fl * | more```
 
 # Day 8
