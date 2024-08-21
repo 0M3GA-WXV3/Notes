@@ -42,7 +42,7 @@ https://os.cybbh.io/public/os/latest/001_operating_systems/activity_point_breakd
   -  Powershell
 
   -  Alternate Data Streams
-      Using ```dir /r``` will allow the opportunity to 
+      Using ```dir /r``` will hide files
 
 ### Disabling Windows Defender when needed
 
