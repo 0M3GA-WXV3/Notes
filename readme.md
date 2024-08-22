@@ -45,9 +45,11 @@ https://os.cybbh.io/public/os/latest/001_operating_systems/activity_point_breakd
 
   -  rc.d files in /etc
 
-  -  bash_profile
+  -  .bash_profile
 
-  -  bashrc
+  -  .profile
+
+  -  .bashrc
 
 ### Methods of checking persistance
 
