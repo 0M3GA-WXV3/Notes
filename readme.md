@@ -39,15 +39,21 @@ https://os.cybbh.io/public/os/latest/001_operating_systems/activity_point_breakd
     
   -  /etc/inittab
 
-  -  /etc/init
+  -  /var/spool/cron
 
-  -  /etc/* rc *
+  -  /etc/init.d
+
+  -  rc.d files in /etc
+
+  -  bash_profile
 
   -  bashrc
 
 ### Methods of checking persistance
 
   -  Regedit
+
+  -  reg.exe query
 
   -  Command Line
 
