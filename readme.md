@@ -353,3 +353,43 @@ IPv6 (Standardized in 2017)
         Intercept FHRP message exchange
         Inject manipulated messages
         MITM by becoming active forwarder
+
+## Port Ranges
+  *  0 - 1023 | Well Known System Ports
+  *  1024 - 49151 | Registered User Ports
+  *  49152 - 65535 | Dynamic Private Port (aka. Ephemeral High Port)
+
+## VPN
+  Types
+  *  RAT (Client - Site)
+  *  Site - Site
+
+## Layer 6 of OSI
+   Anything translation based
+       *  Translation
+       *  Formating
+       *  Encoding
+       *  Encryption
+       *  Compression
+## SSH Key Files
+  *  Known Hosts
+  *  
+      ```~/.ssh/known_hosts```
+     
+  *  Config Files
+
+      ```/etc/ssh/ssh_config ```
+     
+      ```/etc/ssh/sshd_config ```
+## SSH Keygen
+
+      ```ssh-keygen -t rsa -b 4096 -C "User" ```
+
+## HTTP Vulnerabilities
+  *  Flooding
+  *  Amplification
+  *  Low & Slow
+  *  Drive-by Downloads
+  *  BeEF Framework
+
+## 
