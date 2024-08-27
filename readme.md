@@ -8,6 +8,12 @@
   *  https://explainshell.com
   *  https://ss64.com
 
+  ## Logging into blue internet host
+    ```
+    ssh student@10.50.38.83 -X
+    password
+    ```
+
 ## Floating IPs
   An IP which will allow access to internal networks, will redirect you to a new internal station to use and will show the internal private IP once accessed. In essence, a redirector.
 ## OSI Model
