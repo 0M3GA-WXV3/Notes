@@ -379,8 +379,7 @@ IPv6 (Standardized in 2017)
        *  Compression
 ## SSH Key Files
   *  Known Hosts
-  *  
-      ```~/.ssh/known_hosts```
+      ``` ~/.ssh/known_hosts ```
      
   *  Config Files
 
@@ -388,8 +387,7 @@ IPv6 (Standardized in 2017)
      
       ```/etc/ssh/sshd_config ```
 ## SSH Keygen
-
-      ```ssh-keygen -t rsa -b 4096 -C "User" ```
+      ssh-keygen -t rsa -b 4096 -C "User"
 
 ## HTTP Vulnerabilities
   *  Flooding
@@ -398,4 +396,130 @@ IPv6 (Standardized in 2017)
   *  Drive-by Downloads
   *  BeEF Framework
 
-## 
+# Day 2
+
+## Packet Collection
+  *  Use Wireshark, TShark, TCPDump, etc
+  *  OS Fingerprinting in P0F, -r to read pcap and -i to read interface
+      Signitute DB: less /etc/p0f/p0f.fp
+  *  BPFs suck ass
+
+# Day 3
+
+## Sockets
+  *  Stream Sockets - Connection oriented and sequenced; methods for connection establishment and tear-down. Used with TCP, SCTP, and Bluetooth.
+  *  Datagram Sockets - Connectionless; designed for quickly sending and receiving data. Used with UDP.
+  *  RAW Sockets - Let's us create packets, how the internet works and programs talk to each other
+
+## User Space & Kernel Space sockets
+  *  Userspace Sockets
+
+      ^  Stream Sockets
+
+      ^  Datagram Sockets
+
+  *  Kernel Space Sockets
+
+      ^  RAW Sockets
+
+  *  User Space Sockets - The most common sockets that do not require elevated privileges to perform actions on behalf of user applications.
+
+  *  Kernel Space Sockets - Attempts to access hardware directly on behalf of a user application to either prevent encapsulation/decapsulation or to create packets from scratch, which requires elevated privileges.
+
+  *  Userspace Applications
+       Using tcpdump or wireshark to read a file
+     
+       Using nmap with no switches
+
+       Using netcat to connect to a listener
+
+       Using netcat to create a listener above the well known port range (1024+)
+
+       Using /dev/tcp or /dev/udp to transmit data
+  *  Kernelspace Applications
+
+      Using tcpdump or wireshark to capture packets on the wire
+
+      Using nmap for OS identification or to set specific flags when scanning
+
+      Using netcat to create a listener in the well known port range (0 - 1023)
+
+      Using Scapy to craft or modify a packet for transmission
+
+      Using Python to craft or modify RAW Sockets for transmission
+
+      Network devices using routing protocols such as OSPF
+
+      Any Traffic without Transport Header (ICMP)
+
+  *  Python
+
+      ```import {module}```  -  Will import a module to python to use its libraries
+     
+      ```from {module} import *```  -  Will allow calling of functions from module
+
+  *  Socket.socket
+
+          ```import socket
+          s = socket.socket(socket.FAMILY, socket.TYPE, socket.PROTOCOL)```
+
+     Inside the socket.socket. function, you have these arguments, in order:
+
+     ```socket.socket( *family*, *type*, *proto* )```
+     
+        family: ```AF_INET*, AF_INET6, AF_UNIX```
+
+        type: ```SOCK_STREAM*, SOCK_DGRAM, SOCK_RAW```
+
+        proto: ```0*, IPPROTO_TCP, IPPROTO_UDP, IPPROTO_IP, IPPROTO_ICMP, IPPROTO_RAW```
+
+  *  Python Network Programming
+
+      ![image](https://github.com/user-attachments/assets/ac19f933-3dd9-47c5-b30e-7987dcb787ef)
+
+      By default, it will decode into UTF-8
+
+  ##Encoding vs Decryption
+    
+  Encoding is the process of taking bits and converting them to a set cipher
+     
+   Decoding is reverse process to get the encoded data
+     
+  Encryption scrambles data to make it completely unlegible and "near" impossible to reverse without a key
+
+   Examples.
+    
+  Encode Text to Hex
+     
+                 ```echo "Message" | xxd```
+     
+  Encode to Hex
+     
+                 ```xxd file.txt file-encoded.txt```
+     
+  Decode file From Hex
+     
+                 ```xxd -r file-encoded.txt file-decoded.txt```
+<hr>
+     ##Python Hex Encoding
+       ```
+       import binascii
+       message = b'Message'
+       hidden_msg = binascii.hexlify(message)
+       ```
+     ## Base64 Encode/Decode  
+     
+### Encode text to base64:
+     
+        ```echo "Message" | base64```
+
+Encode file to Base64:
+
+        ```base64 file.txt > file-encoded.txt```
+
+  Decode file from Base64:
+
+        ```base64 -d file-encoded.txt > file-decoded.txt```
+
+     MD5
+         ```echo "Answer" | md5sum```
