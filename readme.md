@@ -491,35 +491,36 @@ IPv6 (Standardized in 2017)
     
   Encode Text to Hex
      
-                 ```echo "Message" | xxd```
+                 echo "Message" | xxd
      
   Encode to Hex
      
-                 ```xxd file.txt file-encoded.txt```
+                 xxd file.txt file-encoded.txt
      
   Decode file From Hex
      
-                 ```xxd -r file-encoded.txt file-decoded.txt```
+                 xxd -r file-encoded.txt file-decoded.txt
 <hr>
      ##Python Hex Encoding
+     
        ```
        import binascii
        message = b'Message'
        hidden_msg = binascii.hexlify(message)
        ```
-     ## Base64 Encode/Decode  
+  ## Base64 Encode/Decode  
      
 ### Encode text to base64:
      
-        ```echo "Message" | base64```
+        echo "Message" | base64
 
 Encode file to Base64:
 
-        ```base64 file.txt > file-encoded.txt```
+        base64 file.txt > file-encoded.txt
 
   Decode file from Base64:
 
-        ```base64 -d file-encoded.txt > file-decoded.txt```
+        base64 -d file-encoded.txt > file-decoded.txt
 
      MD5
-         ```echo "Answer" | md5sum```
+         echo "Answer" | md5sum
