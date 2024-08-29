@@ -522,5 +522,130 @@ Encode file to Base64:
 
         base64 -d file-encoded.txt > file-decoded.txt
 
-     MD5
-         echo "Answer" | md5sum
+   MD5
+   
+           echo "Answer" | md5sum
+
+# Day 4
+
+## Reconnaissance Stages
+  *  Passive External
+  *  Active Extrenal
+  *  Passive Internal
+  *  Active Internal
+
+## Nature of Scanning
+  *  Active and Passive scanning, can be remote to local, local to remote, local to local, & remote to remote.
+
+## Commands
+  *  ```ping X.X.X.X -c 1```  -  Pings given IP one time on multiple ports
+  *  ```for i in {1..254}; do (ping -c 1 X.X.X.$i | grep "bytes from" &) ; done```  -  Ping sweeps network
+  *  ```nmap```  -  Security tool for enumerating ports, sS = SYN/SYN-ACK/RST, sT = SYN/SYN-ACK/ACK, sN = no flags, sX = XMAS Tree Scan, sU = ICMP, sI = Setup redirector to do scan on their box, -O = Operating System Guessing, -sV = Version Scan, -PE = ICMP ping, -Pn = No Ping, T0-5 = Timeout
+  *  ```traceroute```  -  Traces route to IP address
+  *  NetCat  -  TCP
+      ```
+      #!/bin/bash
+      echo "Enter network address (e.g. 192.168.0): "
+      read net
+      echo "Enter starting host range (e.g. 1): "
+      read start
+      echo "Enter ending host range (e.g. 254): "
+      read end
+      echo "Enter ports space-delimited (e.g. 21-23 80): "
+      read ports
+      for ((i=$start; $i<=$end; i++))
+      do
+      nc -nvzw1 $net.$i $ports 2>&1 | grep -E 'succ|open'
+      done```
+   *  NetCat  -  UDP
+
+     ```
+      #!/bin/bash
+      echo "Enter network address (e.g. 192.168.0): "
+      read net
+      echo "Enter starting host range (e.g. 1): "
+      read start
+      echo "Enter ending host range (e.g. 254): "
+      read end
+      echo "Enter ports space-delimited (e.g. 21-23 80): "
+      read ports
+      for ((i=$start; $i<=$end; i++))
+      do
+      nc -nuvzw1 $net.$i $ports 2>&1 | grep -E 'succ|open'
+      done
+      ```
+  *  NetCat  -  Banner Grab
+    ```
+    nc [Target IP] [Target Port]
+    nc 172.16.82.106 22
+    nc -u 172.16.82.106 53```
+  *  Curl
+    ```
+    curl http://172.16.82.106
+curl ftp://172.16.82.106
+    ```
+  *  Wget (-r)
+    ```
+    wget -r http://172.16.82.106
+wget -r ftp://172.16.82.106
+    ```
+
+  ## Show IP Configuration
+  *  Windows: ipconfig /all
+  *  Linux: ip address (ifconfig depreciated)
+  *  VyOS: show interface
+
+ ### DNS Config
+   *  Windows: ipconfig /displaydns
+   *  Linux: cat /etc/resolv.conf
+ ### ARP Cache
+  *  Windows: arp -a
+  *  Linux: ip neighbor (arp -a depreciated)
+
+ ### Network Connections
+   *  Windows: Netstat
+   *  Linux: ss
+
+ ### Services
+   *  Windows: %SystemRoot%\system32\drivers\etc\services
+   *  Linux/Unix: /etc/services
+
+ ### OS Info
+   *  systeminfo
+   *  uname -a & /etc/os-release
+
+ ### Running Processes
+   *  tasklist
+   *  ps & top/htop
+
+ ### Command Path
+   *  which
+   *  whereis
+
+ ### Routing Table
+   *  Windows: route print
+   *  Linux: ip route (netstat -r deprecated)
+   *  VyOS: show ip route
+
+ ### File Search
+   *  find / -name hint* 2> /dev/null
+   *  find / -iname flag* 2> /dev/null
+
+ ### SSH Config
+   *  Windows: C:\Windows\System32\OpenSSH\sshd_config
+   *  Linux: /etc/ssh/sshd_config
+
+ ### ARP Scanning
+   *  arp-scan --interface=eth0 --localnet
+   *  nmap -sP -PR 172.16.82.96/27
+
+### Ping Scanning
+  *  ping -c 1 172.16.82.106
+  *  for i in {1..254}; do (ping -c 1 172.16.82.$i | grep "bytes from" &) ; done
+  *  sudo nmap -sP 172.16.82.96/27
+
+### Dev TCP Banner Grab
+  *  exec 3<>/dev/tcp/172.16.82.106/22; echo -e "" >&3; cat <&3
+
+### Dev TCP Scanning
+  *  for p in {1..1023}; do(echo >/dev/tcp/172.16.82.106/$p) >/dev/null 2>&1 && echo "$p open"; done
