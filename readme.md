@@ -649,3 +649,16 @@ wget -r ftp://172.16.82.106
 
 ### Dev TCP Scanning
   *  for p in {1..1023}; do(echo >/dev/tcp/172.16.82.106/$p) >/dev/null 2>&1 && echo "$p open"; done
+
+
+# Day 6
+
+## Network analysis
+
+
+1.telnet (ssh01) --->  ssh student@10.50.38.83 -R 20160:localhost:22 -NT
+2.ssh net2_student1@localhost -p20160 -L 20161:192.168.0.40:5555
+3.ssh net2_student1@localhost -p 20161 -L 20162:172.16.0.60:23
+4.telnet localhost 20162--->  ssh net2_student1@192.168.0.40 -p 5555 -R 20164:localhost:22
+5.ssh net2_comrade1@localhost -p 20161 -L 20165:localhost:20164
+6.ssh net2_comrade1@localhost -p 20165 -D 9050
