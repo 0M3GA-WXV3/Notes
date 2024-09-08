@@ -655,10 +655,15 @@ wget -r ftp://172.16.82.106
 
 ## Network analysis
 
+```for i in {1..254} ;do (ping -c 1 (1st 3 octets)$i | grep "bytes from" &) ;done```
 
-1.telnet (ssh01) --->  ssh student@10.50.38.83 -R 20160:localhost:22 -NT
-2.ssh net2_student1@localhost -p20160 -L 20161:192.168.0.40:5555
-3.ssh net2_student1@localhost -p 20161 -L 20162:172.16.0.60:23
-4.telnet localhost 20162--->  ssh net2_student1@192.168.0.40 -p 5555 -R 20164:localhost:22
-5.ssh net2_comrade1@localhost -p 20161 -L 20165:localhost:20164
-6.ssh net2_comrade1@localhost -p 20165 -D 9050
+1.  telnet (ssh01)   --->  ssh student@10.50.38.83 -R 20160:localhost:22 -NT
+2.  ssh net2_student1@localhost -p20160 -L 20161:192.168.0.40:5555
+3.  ssh net2_student1@localhost -p 20161 -L 20162:172.16.0.60:23
+4.  telnet localhost 20162  --->  ssh net2_student1@192.168.0.40 -p 5555 -R 20164:localhost:22
+5.  ssh net2_comrade1@localhost -p 20161 -L 20165:localhost:20164
+6.  ssh net2_comrade1@localhost -p 20165 -L 20166:172.16.0.90:2222
+7.  ssh net2_comrade1@localhost -p 
+8.  
+
+last.  ssh net2_comrade1@localhost -p 20165 -D 9050
