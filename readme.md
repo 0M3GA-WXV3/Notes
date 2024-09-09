@@ -450,7 +450,7 @@ IPv6 (Standardized in 2017)
 
       Network devices using routing protocols such as OSPF
 
-      Any Traffic without Transport Header (ICMP)
+      Any Traffic without Transport Header (ICMP)Day 1
 
   *  Python
 
@@ -665,6 +665,12 @@ wget -r ftp://172.16.82.106
 6.  ssh net2_comrade1@localhost -p 20165 -L 20166:172.16.0.90:2222
 7.  ssh net2_comrade1@localhost -p 20166 -D 9050
 
+
+
+
+
+
+
 # Day 7
 
 ## Chains assigned to each Table
@@ -828,4 +834,15 @@ Replaces rule at handle
    nft replace rule [family] [table] [chain] [handle <handle>] [matches] [statement]
 
 sudo nft add chain ip CCTC INPUT { \; policy accept \;}
+
 sudo nft flush table ip CCTC
+
+
+```
+sudo iptables -t filter -A INPUT -p tcp --sport 22 -j ACCEPT
+
+sudo iptables -A OUTPUT -p tcp -m multiport --ports 6010,6011,6012 -j ACCEPT
+```
+T1 = 467accfb25050296431008a1357eacb1z
+T2 = 9f7a3394182bdafd2775fd20176cdf4
+T3 = 05e5fb96e2a117e01fc1227f1c4d664c
