@@ -664,3 +664,168 @@ wget -r ftp://172.16.82.106
 5.  ssh net2_comrade1@localhost -p 20161 -L 20165:localhost:20164
 6.  ssh net2_comrade1@localhost -p 20165 -L 20166:172.16.0.90:2222
 7.  ssh net2_comrade1@localhost -p 20166 -D 9050
+
+# Day 7
+
+## Chains assigned to each Table
+
+*   filter - INPUT, FORWARD, and OUTPUT
+
+*   nat - PREROUTING, POSTROUTING, INPUT, and OUTPUT
+
+*   mangle - All chains
+
+*   raw - PREROUTING and OUTPUT, don't worry about it
+
+*   security - INPUT, FORWARD, and OUTPUT
+
+## Common IP Table Options
+
+-t - Specifies the table. (Default is filter)
+
+-A - Appends a rule to the end of the list or below specified rule
+
+-I - Inserts the rule at the top of the list or above specified rule
+
+-R - Replaces a rule at the specified rule number
+
+-D - Deletes a rule at the specified rule number
+
+-F - Flushes the rules in the selected chain
+
+-L - Lists the rules in the selected chain using standard formatting
+
+-S - Lists the rules in the selected chain without standard formatting
+
+-P - Sets the default policy for the selected chain
+
+-n - Disables inverse lookups when listing rules
+
+--line-numbers - Prints the rule number when listing rules
+
+### BEFORE YOU FLUSH RULES, CHANGE THE DEFAULT POLICY TO ACCEPT!!!
+
+-p - Specifies the protocol
+
+-i - Specifies the input interface
+
+-o - Specifies the output interface
+
+--sport - Specifies the source port
+
+--dport - Specifies the destination port
+
+-s - Specifies the source IP
+
+-d - Specifies the destination IP
+
+-j - Specifies the jump target action
+
+## IP Tables Syntax
+
+```iptables -t [table] -A [chain] rules -j [accept/deny/drop]```
+
+Table: filter*,nat,mangle
+
+Chain: INPUT, OUTPUT, PREROUTING, POSTROUTING, FORWARD
+
+-i [ iface ]
+
+-o [ iface ]
+
+-s [ ip.add | network/CIDR ]
+
+-d [ ip.add | network/CIDR ]
+
+-p icmp [ --icmp-type type# { /code# } ]
+
+-p tcp [ --sport | --dport { port1 |  port1:port2 } ]
+
+-p tcp [ --tcp-flags SYN,ACK,PSH,RST,FIN,URG,ALL,NONE ]
+
+-p udp [ --sport | --dport { port1 | port1:port2 } ]
+
+-m state --state NEW,ESTABLISHED,RELATED,UNTRACKED,INVALID
+
+-m mac [ --mac-source | --mac-destination ] [mac]
+
+-p [tcp|udp] -m multiport [ --dports | --sports | --ports { port1 | port1:port15 } ]
+
+-m bpf --bytecode [ 'bytecode' ]
+
+-m iprange [ --src-range | --dst-range { ip1-ip2 } ]
+
+## IP Tables Actions
+ 
+  ACCEPT - Allow the packet
+
+  REJECT - Deny the packet (send an ICMP reponse)
+
+  DROP - Deny the packet (send no response)
+  
+  -j [ ACCEPT | REJECT | DROP ]
+
+
+## NFT TABLES
+
+nft add rule [family] [table] [chain] [matches (matches)] [statement]
+
+* [matches] = typically protocol headers(i.e. ip, ip6, tcp,
+            udp, icmp, ether, etc)
+
+* (matches) = these are specific to the [matches] field.
+
+* [statement] = action performed when packet is matched. Some
+              examples are: log, accept, drop, reject,
+              counter, nat (dnat, snat, masquerade)
+
+## Change Policy
+
+  nft add chain [family] [table] [chain] { \; policy [policy] \;}
+
+## Match Options
+
+ip [ saddr | daddr { ip | ip1-ip2 | ip/CIDR | ip1, ip2, ip3 } ]
+
+tcp flags { syn, ack, psh, rst, fin }
+
+tcp [ sport | dport { port1 | port1-port2 | port1, port2, port3 } ]
+
+udp [ sport| dport { port1 | port1-port2 | port1, port2, port3 } ]
+
+icmp [ type | code { type# | code# } ]
+
+ct state { new, established, related, invalid, untracked }
+
+iif [iface]
+
+oif [iface]
+
+## Modify Table
+
+nft { list | flush } ruleset
+
+nft { delete | list | flush } table [family] [table]
+
+nft { delete | list | flush } chain [family] [table] [chain]
+
+## Modify Rules at Handle
+
+List table with handle numbers
+
+   nft list table [family] [table] [-a]
+
+Adds after position
+
+   nft add rule [family] [table] [chain] [position <position>] [matches] [statement]
+
+Inserts before position
+
+   nft insert rule [family] [table] [chain] [position <position>] [matches] [statement]
+
+Replaces rule at handle
+
+   nft replace rule [family] [table] [chain] [handle <handle>] [matches] [statement]
+
+sudo nft add chain ip CCTC INPUT { \; policy accept \;}
+sudo nft flush table ip CCTC
