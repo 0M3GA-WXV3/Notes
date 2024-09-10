@@ -843,6 +843,3 @@ sudo iptables -t filter -A INPUT -p tcp --sport 22 -j ACCEPT
 
 sudo iptables -A OUTPUT -p tcp -m multiport --ports 6010,6011,6012 -j ACCEPT
 ```
-T1 = 467accfb25050296431008a1357eacb1z
-T2 = 9f7a3394182bdafd2775fd20176cdf4
-T3 = 05e5fb96e2a117e01fc1227f1c4d664c
