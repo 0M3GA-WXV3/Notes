@@ -18,22 +18,46 @@
 
 ### New Tunneling Method
 
-1. Will setup connection to the jumpbox
+#### 1. Will setup connection to the jumpbox
  
-```ssh -MS /tmp/jump student@10.50.36.164```
+ ```ssh -MS /tmp/jump student@10.50.36.164```
 
-2. Enumerate using Ruby Pingsweep
+
+#### 2. Enumerate using Ruby Pingsweep
  
-```for i in {1..254} ;do (ping -c 1 X.X.X.$i | grep "bytes from" &) ;done```
+ ```for i in {1..254} ;do (ping -c 1 X.X.X.$i | grep "bytes from" &) ;done```
 
-3. Setup Proxychains from Lin-Ops
+
+#### 3. Setup Proxychains from Lin-Ops
  
-```ssh -S /tmp/jump jump -O forward -D 9050```
+ ```ssh -S /tmp/jump jump -O forward -D 9050```
 
-4. Discover Open Ports on Hosts
+ * To Cancel Proxychain : replace forward before -D with ```cancel```
 
-```proxychains nmap -Pn X.X.X.X -T4 -n```
+#### 4. Discover Open Ports on Hosts
 
-5. Banner Grab Ports of Interest
+ ```proxychains nmap -Pn X.X.X.X -T4 -n```
 
-```proxychains nc X.X.X.X (Port)```
+
+#### 5. Banner Grab Ports of Interest
+
+ ```proxychains nc X.X.X.X (Port)```
+
+#### 6. Local Port Forwards to Internal Web Servers and SSH Server
+
+ ```ssh -S /tmp/jump jump -O forward -L2222:192.168.28.100:80 -L3333:192.168.28.100:2222```
+
+#### 7. Connect on port 3333 to address specified in Forward
+
+ * Connecting to SSH Server
+
+ ```ssh -MS /tmp/t1 creds@127.0.0.1 -p 3333```
+
+ * Connecting to Web Server
+
+ ```ssh -MS /tmp/t1 creds@127.0.0.1 -p 2222```
+
+<hr>
+
+### Slide Notes
+
