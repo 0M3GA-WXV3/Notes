@@ -7,7 +7,7 @@
   *  
 
 ### Stack Info
-  *  Stack No. 1
-  *  Username: NAAN-006-M
-  *  Password: 0pnw1tLceqmGWTj
-  *  IP: 10.50.36.164
+  *  Stack No. ```1```
+  *  Username: ```NAAN-006-M```
+  *  Password: ```0pnw1tLceqmGWTj```
+  *  IP: ```10.50.36.164```
