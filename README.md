@@ -16,6 +16,8 @@
   *  Password: ```0pnw1tLceqmGWTj```
   *  IP: ```10.50.36.164```
 
+##MAKE GOOD OPNOTES
+
 ### New Tunneling Method
 
 #### 1. Will setup connection to the jumpbox
@@ -45,7 +47,7 @@
 
 #### 6. Local Port Forwards to Internal Web Servers and SSH Server
 
- ```ssh -S /tmp/jump jump -O forward -L2222:192.168.28.100:80 -L3333:192.168.28.100:2222```
+ ```ssh -S /tmp/jump jump -O forward -L2222:X.X.X.X:80 -L3333:X.X.X.X:2222```
 
 #### 7. Connect on port 3333 to address specified in Forward
 
@@ -59,5 +61,22 @@
 
 <hr>
 
-### Slide Notes
+## Slide Notes
 
+### XPATH HTML Scraper
+```
+#!/usr/bin/python
+import lxml.html
+import requests
+
+page = requests.get('http://quotes.toscrape.com')
+tree = lxml.html.fromstring(page.content)
+
+authors = tree.xpath('//small[@class="author"]/text()')
+
+print ('Authors: ',authors)
+```
+#### Uses Python to scrape webpage at domain for certain HTML element
+
+## Nmap Scripting Engine
+```proxychains nmap -T4 --script=banner=http-enum 192.168.28.100 -p80```
