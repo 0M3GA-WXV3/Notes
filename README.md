@@ -16,7 +16,7 @@
   *  Password: ```0pnw1tLceqmGWTj```
   *  IP: ```10.50.36.164```
 
-##MAKE GOOD OPNOTES
+## "MAKE GOOD OPNOTES"
 
 ### New Tunneling Method
 
@@ -59,6 +59,14 @@
 
  ```ssh -MS /tmp/t1 creds@127.0.0.1 -p 2222```
 
+#### SCP
+
+Remote -> Local
+```
+```
+Local -> Remote
+```scp -P 1234 inventory.exe comrade@127.0.0.1:.
+```
 <hr>
 
 ## Slide Notes
@@ -197,11 +205,127 @@ From surfing:
 
    ![image](https://github.com/user-attachments/assets/28c8ec91-2666-4dd7-9911-e2e5e5e7ec4a)
 
-<hr>
-
-   ##
-
-
    UNION SELECT type,2,cost,color,year from session.car #
    UNION SELECT carid,2,type,name,year from session.car #
  #Place ? at end of (url).php to make it a query then add string, should return wanted info array
+
+<hr>
+
+## Day 4
+
+### Reverse Engineering Day
+
+### x86 Assembly
+
+   #### 16 general purpose 64bit registers
+   
+   ```%rax``` First return register
+
+   ```%rbx``` Second return register
+
+   ```%rcx``` Third return register
+
+   ```%rdx``` Fourth return register
+
+   ```%rbp``` Base Pointer that stores location of the bottom on the stack
+   
+   ```%rsp``` Register that stores location of top of the stack
+
+   ### Memory Structure
+
+|HEAP|STACK|General Register|Control Register|Flags Register|
+|:---:|:---:|:---:|:---:|:---:|
+|Memory to be allocated and deallocated|Contiguous section of memory for passing arguments|Multipurpose register that can be used to store data/memory locations|Processor register changing CPU behavior|Stores state of CPU|
+
+ * #### Memory Offset
+|64bit|32bit|Lower 16 bits|Desc|
+|:---:|:---:|:---:|:---:|
+|RIP|EIP|IP|Instruction Pointer, holds address for next instruction|
+
+ * #### Instruction Pointers
+
+|MOV|PUSH|POP|INC|DEC|ADD|SUB|CMP|JMP|JLE|JE|
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|Move src to dst|Push src onto stack, stack grows by 8 bytes|Pop top of stack to dst, stack shrinks by 8|Increment src by 1|Decrement src by 1|Add src to dst|Subtract src from dst|Compare 2 vals by subtracting them and setting %RFLAGS, ZeroFlag set means they are the same|Jump to location|Jump if Less or Equal|Jump if Equal|
+
+Examples:
+```
+  1 main:
+  2     mov rax, 16         //Move into rax, value of 16
+  3     push rax        //Push rax (16) to top of the stack, stack will grow by 8 bytes
+  4     jmp mem2    //Jump to memory location with function mem2
+  5 
+  6 mem1:
+  7     mov rax, 8          //Move into rax, value of 8
+  8     ret             //Will return contents of first return register
+  9 
+ 10 mem2:
+ 11     pop r8              //Pop value at top of the stack (16) into r8
+ 12     cmp rax, r8     //Compare rax (16) to r8 (16) by subtracting then set ZeroFlag bc they are the same
+ 13     je mem1      //Jump to mem1 if ZeroFlag is set (it is) to equal
+```
+```
+  1 main:
+  2     mov rcx, 25         //Move value 35 into rcx
+  3     mov rbx, 62      //Move value 62 into rbx
+  4     jmp mem1      //Jump to memory location containing function mem1
+  5 
+  6 mem1:
+  7     sub rbx, 40             //Subtract value of 40 from rbx, making rbx = 22
+  8     mov rsi, rbx        //Move value of rbx into rsi, making rsi = 22
+  9     cmp rcx, rsi     //Compare rsi (22) to rcx (25) Less than flag is set
+ 10     jle mem2       //Jump to memory location containing function mem2 if rsi (22) <= rcx (25)
+ 11 
+ 12 mem2:
+ 13     mov rax, 0      //Move value 0 into rax
+ 14     ret          //Return contents of first register, rax (0)
+```
+
+### Reverse Engineering Workflow (Software)
+ * Static
+ * Behavioral
+ * Dynamic
+ * Disassembly
+ * Document Findings
+
+# Day 5
+
+### Exploit Engineering
+
+get program and confirm whether it uses vulnerable assembly instruction (gets)
+
+script will be edited as time goes on, start with something simple
+
+```
+#!/usr/bin/env python
+buffer = "A" * 200
+print(buffer)
+```
+
+run program through gbd with a script as an argument using run <<<$(script.py)
+
+find code and copy the location it says and use it for offset
+
+find offset value, https://wiremask.eu/tools/buffer-overflow-pattern-generator/
+
+next run gdb without any plugins and unset COLUMNS & LINES, then run the program to confirm it crashes
+
+map memory with ```info proc map```
+
+look for jmp esp with 1st 4 locations, 1st location for heap and last for stack```find /b 0xf7de1000, 0xffffe000, 0xff, 0xe4```
+
+Use msfconsole, msfvenom, to make shellcode
+msfvenom -p linux/x86/exec CMD=whoami -b '\x00' -f python
+
+# Day 6
+
+### Windows Exploitation Engineering
+
+make script to connect to vuln server
+
+use vulnerable commands ```trun /.:/```
+
+use 5000 character string to crash program and find EIP in immunity db
+
+use EIP to find offset and iterate a single character that many times
+
